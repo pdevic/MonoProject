@@ -1,0 +1,14 @@
+C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.DAL\bin\Debug\MonoProject.DAL.dll
+C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.DAL\bin\Debug\MonoProject.DAL.pdb
+C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.DAL\obj\Debug\MonoProject.DAL.csprojAssemblyReference.cache
+C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.DAL\obj\Debug\MonoProject.DAL.csproj.CoreCompileInputs.cache
+C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.DAL\obj\Debug\MonoProject.DAL.dll
+C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.DAL\obj\Debug\MonoProject.DAL.pdb
+C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.DAL\bin\Debug\MonoProject.DAL.dll.config
+C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.DAL\bin\Debug\EntityFramework.dll
+C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.DAL\bin\Debug\EntityFramework.xml
+C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.DAL\obj\Debug\MonoProject.DAL.csproj.CopyComplete
+C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.DAL\bin\Debug\MonoProject.Model.Common.dll
+C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.DAL\bin\Debug\MonoProject.Model.Common.pdb

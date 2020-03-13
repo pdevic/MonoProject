@@ -1,0 +1,11 @@
+# Ignore executables and obj files
+.o
+.executables
+
+# Ignore archive files
+.archive
+
+# Ignore logs and test scripts
+.txt
+
+packages/

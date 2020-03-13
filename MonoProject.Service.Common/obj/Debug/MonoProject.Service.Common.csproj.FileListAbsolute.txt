@@ -1,0 +1,5 @@
+C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.Service.Common\bin\Debug\MonoProject.Service.Common.dll
+C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.Service.Common\bin\Debug\MonoProject.Service.Common.pdb
+C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.Service.Common\obj\Debug\MonoProject.Service.Common.csproj.CoreCompileInputs.cache
+C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.Service.Common\obj\Debug\MonoProject.Service.Common.dll
+C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.Service.Common\obj\Debug\MonoProject.Service.Common.pdb

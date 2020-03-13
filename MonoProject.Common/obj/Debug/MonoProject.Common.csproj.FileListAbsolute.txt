@@ -1,0 +1,9 @@
+C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.Common\bin\Debug\MonoProject.Common.dll
+C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.Common\bin\Debug\MonoProject.Common.pdb
+C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.Common\bin\Debug\Ninject.dll
+C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.Common\bin\Debug\Ninject.xml
+C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.Common\obj\Debug\MonoProject.Common.csprojAssemblyReference.cache
+C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.Common\obj\Debug\MonoProject.Common.csproj.CoreCompileInputs.cache
+C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.Common\obj\Debug\MonoProject.Common.csproj.CopyComplete
+C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.Common\obj\Debug\MonoProject.Common.dll
+C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.Common\obj\Debug\MonoProject.Common.pdb

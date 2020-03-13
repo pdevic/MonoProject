@@ -1,0 +1,6 @@
+C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.Repository\bin\Debug\MonoProject.Repository.dll
+C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.Repository\bin\Debug\MonoProject.Repository.pdb
+C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.Repository\obj\Debug\MonoProject.Repository.csprojAssemblyReference.cache
+C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.Repository\obj\Debug\MonoProject.Repository.csproj.CoreCompileInputs.cache
+C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.Repository\obj\Debug\MonoProject.Repository.dll
+C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.Repository\obj\Debug\MonoProject.Repository.pdb
