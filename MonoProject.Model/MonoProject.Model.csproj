@@ -50,7 +50,6 @@
     <Compile Include="GameInfo.cs" />
     <Compile Include="GameInfoPlayerCountTag.cs" />
     <Compile Include="PlayerCountTag.cs" />
-    <Compile Include="Poco.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -10,9 +10,13 @@ using MonoProject.Model.Common;
 
 namespace MonoProject.Model
 {
-    public class GameInfoPlayerCountTag : Poco, IGameInfoPlayerCountTag
+    public class GameInfoPlayerCountTag : IPoco, IGameInfoPlayerCountTag
     {
         [ScaffoldColumn(false)] public int ID { get; set; }
+
+        [Required] public DateTime DateCreated { get; set; }
+        [Required] public DateTime DateUpdated { get; set; }
+        public DateTime TimeStamp { get; set; }
 
         public virtual IGameInfo GameInfo { get; set; }
         public virtual IPlayerCountTag PlayerCountTag { get; set; }

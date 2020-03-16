@@ -10,9 +10,13 @@ using MonoProject.Model.Common;
 
 namespace MonoProject.Model
 {
-    public class GameInfo : Poco, IGameInfo
+    public class GameInfo : IPoco, IGameInfo
     {
         [ScaffoldColumn(false)] public int ID { get; set; }
+
+        [Required] public DateTime DateCreated { get; set; }
+        [Required] public DateTime DateUpdated { get; set; }
+        public DateTime TimeStamp { get; set; }
 
         [Required, StringLength(50), Display(Name = "Game name")] public string Name { get; set; }
         public string Description { get; set; }
