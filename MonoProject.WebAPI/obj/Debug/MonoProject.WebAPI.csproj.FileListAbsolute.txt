@@ -86,3 +86,7 @@ C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.WebAPI\obj\Debug\MonoProje
 C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.WebAPI\obj\Debug\MonoProject.WebAPI.pdb
 C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.WebAPI\bin\Ninject.dll
 C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.WebAPI\bin\Ninject.xml
+C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.WebAPI\bin\EntityFramework.dll
+C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.WebAPI\bin\EntityFramework.SqlServer.dll
+C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.WebAPI\bin\EntityFramework.xml
+C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.WebAPI\bin\EntityFramework.SqlServer.xml

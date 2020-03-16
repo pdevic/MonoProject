@@ -3,7 +3,6 @@ C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.Model.Common\bin\Debug\Mon
 C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.Model.Common\obj\Debug\MonoProject.Model.Common.csproj.CoreCompileInputs.cache
 C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.Model.Common\obj\Debug\MonoProject.Model.Common.dll
 C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.Model.Common\obj\Debug\MonoProject.Model.Common.pdb
-C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.Model.Common\obj\Debug\MonoProject.Model.Common.csprojAssemblyReference.cache
 C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.Model.Common\bin\Debug\Microsoft.AspNet.Scaffolding.EntityFramework.12.0.dll
 C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.Model.Common\bin\Debug\Microsoft.AspNet.Scaffolding.12.0.dll
 C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.Model.Common\bin\Debug\EnvDTE.dll
