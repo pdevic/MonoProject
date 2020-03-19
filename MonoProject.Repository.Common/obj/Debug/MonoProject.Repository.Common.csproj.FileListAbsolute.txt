@@ -4,3 +4,12 @@ C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.Repository.Common\obj\Debu
 C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.Repository.Common\obj\Debug\MonoProject.Repository.Common.csproj.CoreCompileInputs.cache
 C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.Repository.Common\obj\Debug\MonoProject.Repository.Common.dll
 C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.Repository.Common\obj\Debug\MonoProject.Repository.Common.pdb
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository.Common\bin\Debug\MonoProject.Repository.Common.dll
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository.Common\bin\Debug\MonoProject.Repository.Common.pdb
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository.Common\obj\Debug\MonoProject.Repository.Common.csprojAssemblyReference.cache
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository.Common\obj\Debug\MonoProject.Repository.Common.csproj.CoreCompileInputs.cache
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository.Common\obj\Debug\MonoProject.Repository.Common.dll
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository.Common\obj\Debug\MonoProject.Repository.Common.pdb
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository.Common\bin\Debug\MonoProject.Model.Common.dll
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository.Common\bin\Debug\MonoProject.Model.Common.pdb
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository.Common\obj\Debug\MonoProject.Repository.Common.csproj.CopyComplete

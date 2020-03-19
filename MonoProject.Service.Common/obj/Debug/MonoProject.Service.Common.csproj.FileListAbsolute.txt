@@ -3,3 +3,9 @@ C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.Service.Common\bin\Debug\M
 C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.Service.Common\obj\Debug\MonoProject.Service.Common.csproj.CoreCompileInputs.cache
 C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.Service.Common\obj\Debug\MonoProject.Service.Common.dll
 C:\Users\Jupiter\Desktop\Mono\MonoProject\MonoProject.Service.Common\obj\Debug\MonoProject.Service.Common.pdb
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service.Common\bin\Debug\MonoProject.Service.Common.dll
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service.Common\bin\Debug\MonoProject.Service.Common.pdb
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service.Common\obj\Debug\MonoProject.Service.Common.csprojAssemblyReference.cache
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service.Common\obj\Debug\MonoProject.Service.Common.csproj.CoreCompileInputs.cache
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service.Common\obj\Debug\MonoProject.Service.Common.dll
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service.Common\obj\Debug\MonoProject.Service.Common.pdb
