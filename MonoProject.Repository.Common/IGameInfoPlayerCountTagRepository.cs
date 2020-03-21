@@ -8,9 +8,8 @@ using MonoProject.Model.Common;
 
 namespace MonoProject.Repository.Common
 {
-    public interface IGameInfoRepository : IRepository<IGameInfo, int>
+    public interface IGameInfoPlayerCountTagRepository : IRepository<IGameInfoPlayerCountTag, int>
     {
         //IEnumerable<IGameInfo> GetAll();
-        //IEnumerable<IGameInfo> Find(string name);
     }
 }

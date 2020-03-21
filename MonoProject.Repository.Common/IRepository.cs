@@ -13,7 +13,9 @@ namespace MonoProject.Repository.Common
         void Insert(TEntity entityToInsert);
         void Update(TEntity entityToUpdate);
 
-        void Delete(TEntity entityToDelete);
+        //void Delete(TEntity entityToDelete);
         void Delete(TKey entityKey);
+
+        void SaveChanges();
     }
 }

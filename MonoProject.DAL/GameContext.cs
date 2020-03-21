@@ -16,7 +16,7 @@ namespace MonoProject.DAL
         public DbSet<IGameInfo> GameInfos { get; set; }
         public DbSet<IPlayerCountTag> PlayerCountTags { get; set; }
 
-        public DbSet<IGameInfoPlayerCountTag> GameInfoPlayerCounts { get; set; }
+        public DbSet<IGameInfoPlayerCountTag> GameInfoPlayerCountTags { get; set; }
 
     }
 

@@ -52,7 +52,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameInfoPlayerCountTagRepository.cs" />
     <Compile Include="GameInfoRepository.cs" />
+    <Compile Include="PlayerCountTagRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

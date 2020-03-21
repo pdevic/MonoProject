@@ -19,24 +19,24 @@ namespace MonoProject.Repository
             _dbContext = dbContext;
         }
 
-        public IEnumerable<IGameInfo> GetAll()
+        /*public IEnumerable<IGameInfo> GetAll()
         {
             return _dbContext.GameInfos.ToList();
-        }
+        }*/
 
-        public IGameInfo GetByID(int GameInfoID)
+        public IGameInfo GetByID(int gameInfoID)
         {
-            return _dbContext.GameInfos.Find(GameInfoID);
+            return _dbContext.GameInfos.Find(gameInfoID);
         }
 
-        public IEnumerable<IGameInfo> Find(string name)
+        /*public IEnumerable<IGameInfo> Find(string name)
         {
             return _dbContext.GameInfos.Where(x => x.Name.StartsWith(name)).ToList<IGameInfo>();
-        }
+        }*/
 
         public void Insert(IGameInfo entityToInsert)
         {
-            _dbContext.GameInfos.Attach(entityToInsert);
+            _dbContext.GameInfos.Add(entityToInsert);
         }
 
         public void Update(IGameInfo entityToUpdate)
@@ -44,14 +44,19 @@ namespace MonoProject.Repository
             entityToUpdate.DateUpdated = System.DateTime.Now;
         }
 
-        public void Delete(IGameInfo entityToDelete)
+        /*public void Delete(IGameInfo entityToDelete)
         {
             _dbContext.GameInfos.Remove(entityToDelete);
-        }
+        }*/
 
         public void Delete(int entityKey)
         {
-            Delete(GetByID(entityKey));
+            _dbContext.GameInfos.Remove(GetByID(entityKey));
+        }
+
+        public void SaveChanges()
+        {
+            _dbContext.SaveChanges();
         }
     }
 }
