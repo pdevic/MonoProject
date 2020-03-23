@@ -19,37 +19,17 @@ namespace MonoProject.Repository
             _dbContext = dbContext;
         }
 
-        public IEnumerable<IGameInfo> Get()
-        {
-            return _dbContext.GameInfos.ToList();
-        }
-
-        public Task<IEnumerable<IGameInfo>> GetAsync()
-        {
-            return new Task<IEnumerable<IGameInfo>>(Get);
-        }
-
-        public IGameInfo GetByID(int gameInfoID)
+        public async Task<IGameInfo> GetByIDAsync(int gameInfoID)
         {
             return _dbContext.GameInfos.Find(gameInfoID);
         }
 
-        public Task<IGameInfo> GetByIDAsync(int gameInfoID)
-        {
-            return _dbContext.GameInfos.FindAsync(gameInfoID);
-        }
-
-        /*public IEnumerable<IGameInfo> Find(string name)
-        {
-            return _dbContext.GameInfos.Where(x => x.Name.StartsWith(name)).ToList<IGameInfo>();
-        }*/
-
-        public void Insert(IGameInfo entityToInsert)
+        public async Task InsertAsync(IGameInfo entityToInsert)
         {
             _dbContext.GameInfos.Add(entityToInsert);
         }
 
-        public void Update(IGameInfo entityToUpdate)
+        public async Task UpdateAsync(IGameInfo entityToUpdate)
         {
             _dbContext.GameInfos.Attach(entityToUpdate);
             var entry = _dbContext.Entry(entityToUpdate);
@@ -57,17 +37,12 @@ namespace MonoProject.Repository
             entry.Entity.DateUpdated = System.DateTime.Now;
         }
 
-        /*public void Delete(IGameInfo entityToDelete)
+        public async Task DeleteAsync(int entityKey)
         {
-            _dbContext.GameInfos.Remove(entityToDelete);
-        }*/
-
-        public void Delete(int entityKey)
-        {
-            _dbContext.GameInfos.Remove(GetByID(entityKey));
+            _dbContext.GameInfos.Remove(await GetByIDAsync(entityKey));
         }
 
-        public void SaveChanges()
+        public async Task SaveChangesAsync()
         {
             _dbContext.SaveChanges();
         }

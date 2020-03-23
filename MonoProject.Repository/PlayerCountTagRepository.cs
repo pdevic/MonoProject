@@ -19,32 +19,17 @@ namespace MonoProject.Repository
             _dbContext = dbContext;
         }
 
-        public IEnumerable<IPlayerCountTag> Get()
-        {
-            return _dbContext.PlayerCountTags.ToList();
-        }
-
-        public Task<IEnumerable<IPlayerCountTag>> GetAsync()
-        {
-            return new Task<IEnumerable<IPlayerCountTag>>(Get);
-        }
-
-        public IPlayerCountTag GetByID(int playerCountTagID)
-        {
-            return _dbContext.PlayerCountTags.Find(playerCountTagID);
-        }
-
         public Task<IPlayerCountTag> GetByIDAsync(int playerCountTagID)
         {
             return _dbContext.PlayerCountTags.FindAsync(playerCountTagID);
         }
 
-        public void Insert(IPlayerCountTag entityToInsert)
+        public async Task InsertAsync(IPlayerCountTag entityToInsert)
         {
             _dbContext.PlayerCountTags.Add(entityToInsert);
         }
 
-        public void Update(IPlayerCountTag entityToUpdate)
+        public async Task UpdateAsync(IPlayerCountTag entityToUpdate)
         {
             _dbContext.PlayerCountTags.Attach(entityToUpdate);
             var entry = _dbContext.Entry(entityToUpdate);
@@ -52,12 +37,12 @@ namespace MonoProject.Repository
             entry.Entity.DateUpdated = System.DateTime.Now;
         }
 
-        public void Delete(int entityKey)
+        public async Task DeleteAsync(int entityKey)
         {
-            _dbContext.PlayerCountTags.Remove(GetByID(entityKey));
+            _dbContext.PlayerCountTags.Remove(await GetByIDAsync(entityKey));
         }
 
-        public void SaveChanges()
+        public async Task SaveChangesAsync()
         {
             _dbContext.SaveChanges();
         }

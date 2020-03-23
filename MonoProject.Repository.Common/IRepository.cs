@@ -8,18 +8,16 @@ namespace MonoProject.Repository.Common
 {
     public interface IRepository<TEntity, in TKey> where TEntity : class
     {
-        IEnumerable<TEntity> Get();
-        Task<IEnumerable<TEntity>> GetAsync();
+        //IEnumerable<TEntity> Get();
+        //Task<IEnumerable<TEntity>> GetAsync();
 
-        TEntity GetByID(TKey entityKey);
+        //TEntity GetByID(TKey entityKey);
         Task<TEntity> GetByIDAsync(TKey entityKey);
 
-        void Insert(TEntity entityToInsert);
-        void Update(TEntity entityToUpdate);
+        Task InsertAsync(TEntity entityToInsert);
+        Task UpdateAsync(TEntity entityToUpdate);
+        Task DeleteAsync(TKey entityKey);
 
-        //void Delete(TEntity entityToDelete);
-        void Delete(TKey entityKey);
-
-        void SaveChanges();
+        Task SaveChangesAsync();
     }
 }
