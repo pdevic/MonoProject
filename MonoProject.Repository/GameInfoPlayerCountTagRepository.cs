@@ -19,9 +19,24 @@ namespace MonoProject.Repository
             _dbContext = dbContext;
         }
 
+        public IEnumerable<IGameInfoPlayerCountTag> Get()
+        {
+            return _dbContext.GameInfoPlayerCountTags.ToList();
+        }
+
+        public Task<IEnumerable<IGameInfoPlayerCountTag>> GetAsync()
+        {
+            return new Task<IEnumerable<IGameInfoPlayerCountTag>>(Get);
+        }
+
         public IGameInfoPlayerCountTag GetByID(int gameInfoPlayerCountTagID)
         {
             return _dbContext.GameInfoPlayerCountTags.Find(gameInfoPlayerCountTagID);
+        }
+
+        public Task<IGameInfoPlayerCountTag> GetByIDAsync(int gameInfoPlayerCountTagID)
+        {
+            return _dbContext.GameInfoPlayerCountTags.FindAsync(gameInfoPlayerCountTagID);
         }
 
         public void Insert(IGameInfoPlayerCountTag entityToInsert)
@@ -31,7 +46,10 @@ namespace MonoProject.Repository
 
         public void Update(IGameInfoPlayerCountTag entityToUpdate)
         {
-            entityToUpdate.DateUpdated = System.DateTime.Now;
+            _dbContext.GameInfoPlayerCountTags.Attach(entityToUpdate);
+            var entry = _dbContext.Entry(entityToUpdate);
+
+            entry.Entity.DateUpdated = System.DateTime.Now;
         }
 
         public void Delete(int entityKey)

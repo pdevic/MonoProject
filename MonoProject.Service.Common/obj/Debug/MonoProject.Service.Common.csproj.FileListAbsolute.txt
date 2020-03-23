@@ -9,3 +9,8 @@ C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service.Common\obj\
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service.Common\obj\Debug\MonoProject.Service.Common.csproj.CoreCompileInputs.cache
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service.Common\obj\Debug\MonoProject.Service.Common.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service.Common\obj\Debug\MonoProject.Service.Common.pdb
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service.Common\bin\Debug\MonoProject.Model.Common.dll
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service.Common\bin\Debug\MonoProject.Repository.Common.dll
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service.Common\bin\Debug\MonoProject.Model.Common.pdb
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service.Common\bin\Debug\MonoProject.Repository.Common.pdb
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service.Common\obj\Debug\MonoProject.Service.Common.csproj.CopyComplete

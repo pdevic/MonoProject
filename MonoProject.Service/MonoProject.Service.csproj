@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>6e6a4bdf-9e4e-4245-a95b-24c29b900214</ProjectGuid>
+    <ProjectGuid>{6E6A4BDF-9E4E-4245-A95B-24C29B900214}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MonoProject.Service</RootNamespace>
@@ -31,24 +31,33 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="GameInfoService.cs" />
+    <Compile Include="GameService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MonoProject.Model.Common\MonoProject.Model.Common.csproj">
+      <Project>{e92934c4-ec5a-41bc-894e-4581e0964f32}</Project>
+      <Name>MonoProject.Model.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MonoProject.Repository.Common\MonoProject.Repository.Common.csproj">
+      <Project>{cb4db3d8-3375-4ed0-a0d8-60c7126f0a95}</Project>
+      <Name>MonoProject.Repository.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MonoProject.Service.Common\MonoProject.Service.Common.csproj">
+      <Project>{fa696201-fc57-406e-9bfd-cf31d5b17d61}</Project>
+      <Name>MonoProject.Service.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
- </Project>
+</Project>

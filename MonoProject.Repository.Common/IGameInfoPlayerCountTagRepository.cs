@@ -10,6 +10,5 @@ namespace MonoProject.Repository.Common
 {
     public interface IGameInfoPlayerCountTagRepository : IRepository<IGameInfoPlayerCountTag, int>
     {
-        //IEnumerable<IGameInfo> GetAll();
     }
 }

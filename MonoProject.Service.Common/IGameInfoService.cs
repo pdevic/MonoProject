@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using MonoProject.Model.Common;
+
 namespace MonoProject.Service.Common
 {
-    public class Class1
+    public interface IGameInfoService : IRepositoryService<IGameInfo, int>
     {
     }
 }

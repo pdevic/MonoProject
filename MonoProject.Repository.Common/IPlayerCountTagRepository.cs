@@ -10,6 +10,5 @@ namespace MonoProject.Repository.Common
 {
     public interface IPlayerCountTagRepository : IRepository<IPlayerCountTag, int>
     {
-        //IEnumerable<IPlayerCountTag> GetAll();
     }
 }

@@ -8,7 +8,11 @@ namespace MonoProject.Repository.Common
 {
     public interface IRepository<TEntity, in TKey> where TEntity : class
     {
+        IEnumerable<TEntity> Get();
+        Task<IEnumerable<TEntity>> GetAsync();
+
         TEntity GetByID(TKey entityKey);
+        Task<TEntity> GetByIDAsync(TKey entityKey);
 
         void Insert(TEntity entityToInsert);
         void Update(TEntity entityToUpdate);
