@@ -19,32 +19,46 @@ namespace MonoProject.Repository
             _dbContext = dbContext;
         }
 
-        public Task<IPlayerCountTag> GetByIDAsync(int playerCountTagID)
+        public async Task<IPlayerCountTag> GetByIDAsync(int playerCountTagID)
         {
-            return _dbContext.PlayerCountTags.FindAsync(playerCountTagID);
+            return (await _dbContext.PlayerCountTags.FindAsync(playerCountTagID));
         }
 
-        public async Task InsertAsync(IPlayerCountTag entityToInsert)
+        public async Task<IPlayerCountTag> InsertAsync(IPlayerCountTag entityToInsert)
         {
-            _dbContext.PlayerCountTags.Add(entityToInsert);
+            var task = Task.Run(() => _dbContext.PlayerCountTags.Add(entityToInsert));
+            return await task;
         }
 
-        public async Task UpdateAsync(IPlayerCountTag entityToUpdate)
+        public async Task<IPlayerCountTag> UpdateAsync(IPlayerCountTag entityToUpdate)
         {
-            _dbContext.PlayerCountTags.Attach(entityToUpdate);
-            var entry = _dbContext.Entry(entityToUpdate);
+            var task = Task.Run(() =>
+            {
+                _dbContext.PlayerCountTags.Attach(entityToUpdate);
+                var entry = _dbContext.Entry(entityToUpdate);
 
-            entry.Entity.DateUpdated = System.DateTime.Now;
+                entry.Entity.DateUpdated = System.DateTime.Now;
+                return entry;
+            });
+
+            await task;
+            return task.Result.Entity;
         }
 
-        public async Task DeleteAsync(int entityKey)
+        public async Task<IPlayerCountTag> DeleteAsync(int entityKey)
         {
-            _dbContext.PlayerCountTags.Remove(await GetByIDAsync(entityKey));
+            if (GetByIDAsync(entityKey) != null)
+            {
+                var task = Task.Run(async () => _dbContext.PlayerCountTags.Remove(await GetByIDAsync(entityKey)));
+                return (await task);
+            }
+
+            return null;
         }
 
-        public async Task SaveChangesAsync()
+        public async Task<int> SaveChangesAsync()
         {
-            _dbContext.SaveChanges();
+            return (await _dbContext.SaveChangesAsync());
         }
     }
 }

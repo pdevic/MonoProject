@@ -19,32 +19,46 @@ namespace MonoProject.Repository
             _dbContext = dbContext;
         }
 
-        public Task<IGameInfoPlayerCountTag> GetByIDAsync(int gameInfoPlayerCountTagID)
+        public async Task<IGameInfoPlayerCountTag> GetByIDAsync(int gameInfoPlayerCountTagID)
         {
-            return _dbContext.GameInfoPlayerCountTags.FindAsync(gameInfoPlayerCountTagID);
+            return await _dbContext.GameInfoPlayerCountTags.FindAsync(gameInfoPlayerCountTagID);
         }
 
-        public async Task InsertAsync(IGameInfoPlayerCountTag entityToInsert)
+        public async Task<IGameInfoPlayerCountTag> InsertAsync(IGameInfoPlayerCountTag entityToInsert)
         {
-            _dbContext.GameInfoPlayerCountTags.Add(entityToInsert);
+            var task = Task.Run(() => _dbContext.GameInfoPlayerCountTags.Add(entityToInsert));
+            return await task;
         }
 
-        public async Task UpdateAsync(IGameInfoPlayerCountTag entityToUpdate)
+        public async Task<IGameInfoPlayerCountTag> UpdateAsync(IGameInfoPlayerCountTag entityToUpdate)
         {
-            _dbContext.GameInfoPlayerCountTags.Attach(entityToUpdate);
-            var entry = _dbContext.Entry(entityToUpdate);
+            var task = Task.Run(() =>
+            {
+                _dbContext.GameInfoPlayerCountTags.Attach(entityToUpdate);
+                var entry = _dbContext.Entry(entityToUpdate);
 
-            entry.Entity.DateUpdated = System.DateTime.Now;
+                entry.Entity.DateUpdated = System.DateTime.Now;
+                return entry;
+            });
+
+            await task;
+            return task.Result.Entity;
         }
 
-        public async Task DeleteAsync(int entityKey)
+        public async Task<IGameInfoPlayerCountTag> DeleteAsync(int entityKey)
         {
-            _dbContext.GameInfoPlayerCountTags.Remove(await GetByIDAsync(entityKey));
+            if (GetByIDAsync(entityKey) != null)
+            {
+                var task = Task.Run(async () => _dbContext.GameInfoPlayerCountTags.Remove(await GetByIDAsync(entityKey)));
+                return (await task);
+            }
+
+            return null;
         }
 
-        public async Task SaveChangesAsync()
+        public async Task<int> SaveChangesAsync()
         {
-            _dbContext.SaveChanges();
+            return await _dbContext.SaveChangesAsync();
         }
     }
 }

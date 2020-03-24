@@ -14,10 +14,10 @@ namespace MonoProject.Repository.Common
         //TEntity GetByID(TKey entityKey);
         Task<TEntity> GetByIDAsync(TKey entityKey);
 
-        Task InsertAsync(TEntity entityToInsert);
-        Task UpdateAsync(TEntity entityToUpdate);
-        Task DeleteAsync(TKey entityKey);
+        Task<TEntity> InsertAsync(TEntity entityToInsert);
+        Task<TEntity> UpdateAsync(TEntity entityToUpdate);
+        Task<TEntity> DeleteAsync(TKey entityKey);
 
-        Task SaveChangesAsync();
+        Task<int> SaveChangesAsync();
     }
 }

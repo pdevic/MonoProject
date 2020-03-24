@@ -21,30 +21,44 @@ namespace MonoProject.Repository
 
         public async Task<IGameInfo> GetByIDAsync(int gameInfoID)
         {
-            return _dbContext.GameInfos.Find(gameInfoID);
+            return await _dbContext.GameInfos.FindAsync(gameInfoID);
         }
 
-        public async Task InsertAsync(IGameInfo entityToInsert)
+        public async Task<IGameInfo> InsertAsync(IGameInfo entityToInsert)
         {
-            _dbContext.GameInfos.Add(entityToInsert);
+            var task = Task.Run(() => _dbContext.GameInfos.Add(entityToInsert));
+            return await task;
         }
 
-        public async Task UpdateAsync(IGameInfo entityToUpdate)
+        public async Task<IGameInfo> UpdateAsync(IGameInfo entityToUpdate)
         {
-            _dbContext.GameInfos.Attach(entityToUpdate);
-            var entry = _dbContext.Entry(entityToUpdate);
+            var task = Task.Run(() =>
+            {
+                _dbContext.GameInfos.Attach(entityToUpdate);
+                var entry = _dbContext.Entry(entityToUpdate);
 
-            entry.Entity.DateUpdated = System.DateTime.Now;
+                entry.Entity.DateUpdated = System.DateTime.Now;
+                return entry;
+            });
+
+            await task;
+            return task.Result.Entity;
         }
 
-        public async Task DeleteAsync(int entityKey)
+        public async Task<IGameInfo> DeleteAsync(int entityKey)
         {
-            _dbContext.GameInfos.Remove(await GetByIDAsync(entityKey));
+            if (GetByIDAsync(entityKey) != null)
+            {
+                var task = Task.Run(async () => _dbContext.GameInfos.Remove(await GetByIDAsync(entityKey)));
+                return (await task);
+            }
+
+            return null;
         }
 
-        public async Task SaveChangesAsync()
+        public async Task<int> SaveChangesAsync()
         {
-            _dbContext.SaveChanges();
+            return (await _dbContext.SaveChangesAsync());
         }
     }
 }
