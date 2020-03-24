@@ -10,6 +10,10 @@ namespace MonoProject.Service.Common
 {
     public interface IRepositoryService<TEntity, in TKey> where TEntity :class
     {
-        Task<TEntity> GetByID(TKey entityKey);
+        Task<TEntity> GetByIDAsync(TKey entityKey);
+
+        Task<TEntity> InsertAsync(TEntity entityToInsert);
+        Task<TEntity> UpdateAsync(TEntity entityToUpdate);
+        Task<TEntity> DeleteAsync(TKey entityKey);
     }
 }

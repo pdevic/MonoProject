@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace MonoProject.Common
 {
-    public class Class1
+    public class Common
     {
+        public const int gameInfoNameLength = 50;
     }
 }

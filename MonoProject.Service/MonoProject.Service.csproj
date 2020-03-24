@@ -46,6 +46,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MonoProject.Common\MonoProject.Common.csproj">
+      <Project>{b8f07712-ab77-431e-948b-893ab911d9f4}</Project>
+      <Name>MonoProject.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MonoProject.Model.Common\MonoProject.Model.Common.csproj">
       <Project>{e92934c4-ec5a-41bc-894e-4581e0964f32}</Project>
       <Name>MonoProject.Model.Common</Name>

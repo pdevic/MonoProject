@@ -49,5 +49,11 @@
     <Compile Include="IPoco.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MonoProject.Common\MonoProject.Common.csproj">
+      <Project>{b8f07712-ab77-431e-948b-893ab911d9f4}</Project>
+      <Name>MonoProject.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

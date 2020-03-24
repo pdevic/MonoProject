@@ -16,3 +16,5 @@ C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service\bin\Debug\M
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service\bin\Debug\MonoProject.Repository.Common.pdb
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service\bin\Debug\MonoProject.Service.Common.pdb
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service\obj\Debug\MonoProject.Service.csproj.CopyComplete
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service\bin\Debug\MonoProject.Common.dll
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service\bin\Debug\MonoProject.Common.pdb

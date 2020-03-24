@@ -70,3 +70,5 @@ C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Model.Common\obj\De
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Model.Common\obj\Debug\MonoProject.Model.Common.csproj.CopyComplete
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Model.Common\obj\Debug\MonoProject.Model.Common.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Model.Common\obj\Debug\MonoProject.Model.Common.pdb
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Model.Common\bin\Debug\MonoProject.Common.dll
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Model.Common\bin\Debug\MonoProject.Common.pdb
