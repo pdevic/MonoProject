@@ -10,25 +10,25 @@ using MonoProject.Service.Common;
 
 namespace MonoProject.Service
 {
-    public class GameInfoService : IGameInfoService
+    public class PlayerCountTagService : IPlayerCountTagService
     {
-        private readonly IGameInfoRepository repository;
+        private readonly IPlayerCountTagRepository repository;
 
-        public GameInfoService(IGameInfoRepository _repository)
+        public PlayerCountTagService(IPlayerCountTagRepository _repository)
         {
             repository = _repository;
         }
 
-        public async Task<IGameInfo> GetByIDAsync(int entityKey)
+        public async Task<IPlayerCountTag> GetByIDAsync(int entityKey)
         {
             return await repository.GetByIDAsync(entityKey);
         }
 
-        public async Task<IGameInfo> InsertAsync(IGameInfo entityToInsert)
+        public async Task<IPlayerCountTag> InsertAsync(IPlayerCountTag entityToInsert)
         {
             try
             {
-                await GameService.ValidateGameInfoName(entityToInsert.Name);
+                await GameService.ValidatePlayerCountTagName(entityToInsert.Name);
             }
             catch (Exception e)
             {
@@ -39,22 +39,22 @@ namespace MonoProject.Service
             return await repository.InsertAsync(entityToInsert);
         }
 
-        public async Task<IGameInfo> UpdateAsync(IGameInfo entityToUpdate)
+        public async Task<IPlayerCountTag> UpdateAsync(IPlayerCountTag entityToUpdate)
         {
             try
             {
-                await GameService.ValidateGameInfoName(entityToUpdate.Name);
+                await GameService.ValidatePlayerCountTagName(entityToUpdate.Name);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 System.Console.WriteLine(e.Message);
-                throw new Exception("GameInfoService failed to update a GameInfo instance");
+                throw new Exception("PlayerCountTagService failed to update a PlayerCountTag instance");
             }
 
             return await repository.UpdateAsync(entityToUpdate);
         }
 
-        public async Task<IGameInfo> DeleteAsync(int entityKey)
+        public async Task<IPlayerCountTag> DeleteAsync(int entityKey)
         {
             return await repository.DeleteAsync(entityKey);
         }

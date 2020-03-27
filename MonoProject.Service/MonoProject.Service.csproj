@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameInfoPlayerCountTagService.cs" />
+    <Compile Include="PlayerCountTagService.cs" />
     <Compile Include="GameInfoService.cs" />
     <Compile Include="GameService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

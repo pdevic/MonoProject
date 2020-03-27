@@ -8,6 +8,7 @@ namespace MonoProject.Common
 {
     public class Common
     {
-        public const int gameInfoNameLength = 50;
+        public const int gameInfoMaxNameLength = 50;
+        public const int playerCountTagMaxNameLength = 20;
     }
 }

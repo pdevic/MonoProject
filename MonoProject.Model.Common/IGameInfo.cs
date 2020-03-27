@@ -10,7 +10,7 @@ namespace MonoProject.Model.Common
 {
     public interface IGameInfo : IPoco
     {
-        [Required, StringLength(MonoProject.Common.Common.gameInfoNameLength), Display(Name = "Game name")] string Name { get; set; }
+        [Required, StringLength(MonoProject.Common.Common.gameInfoMaxNameLength), Display(Name = "Game name")] string Name { get; set; }
         string Description { get; set; }
         DateTime ReleaseDate { get; set; }
 
