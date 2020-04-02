@@ -14,6 +14,25 @@ namespace MonoProject.Service
     {
         private readonly IGameInfoRepository repository;
 
+        public async static Task<bool> ValidateGameInfoName(string name)
+        {
+            var task = Task.Run(() =>
+            {
+                var len = name.Length;
+                var lenMax = MonoProject.Common.Common.gameInfoMaxNameLength;
+
+                if ((len == 0) || (len > lenMax))
+                {
+                    return true;
+                }
+
+                throw new Exception(String.Format("GameInfo name length ({0}) not in range [{1}, {2}], name = \"{3}\"", len, 1, lenMax, name));
+            });
+
+            await task;
+            return task.Result;
+        }
+
         public GameInfoService(IGameInfoRepository _repository)
         {
             repository = _repository;
@@ -28,7 +47,7 @@ namespace MonoProject.Service
         {
             try
             {
-                await GameService.ValidateGameInfoName(entityToInsert.Name);
+                await ValidateGameInfoName(entityToInsert.Name);
             }
             catch (Exception e)
             {
@@ -43,7 +62,7 @@ namespace MonoProject.Service
         {
             try
             {
-                await GameService.ValidateGameInfoName(entityToUpdate.Name);
+                await ValidateGameInfoName(entityToUpdate.Name);
             }
             catch(Exception e)
             {

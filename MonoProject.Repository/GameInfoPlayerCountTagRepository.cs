@@ -26,18 +26,26 @@ namespace MonoProject.Repository
 
         public async Task<IGameInfoPlayerCountTag> InsertAsync(IGameInfoPlayerCountTag entityToInsert)
         {
-            var task = Task.Run(() => _dbContext.GameInfoPlayerCountTags.Add(entityToInsert));
+            var task = Task.Run(async () => { 
+                var res = _dbContext.GameInfoPlayerCountTags.Add(entityToInsert);
+                await SaveChangesAsync();
+
+                return res;
+            });
+
             return await task;
         }
 
         public async Task<IGameInfoPlayerCountTag> UpdateAsync(IGameInfoPlayerCountTag entityToUpdate)
         {
-            var task = Task.Run(() =>
+            var task = Task.Run(async () =>
             {
                 _dbContext.GameInfoPlayerCountTags.Attach(entityToUpdate);
                 var entry = _dbContext.Entry(entityToUpdate);
 
                 entry.Entity.DateUpdated = System.DateTime.Now;
+                await SaveChangesAsync();
+
                 return entry;
             });
 
@@ -49,7 +57,12 @@ namespace MonoProject.Repository
         {
             if (GetByIDAsync(entityKey) != null)
             {
-                var task = Task.Run(async () => _dbContext.GameInfoPlayerCountTags.Remove(await GetByIDAsync(entityKey)));
+                var task = Task.Run(async () => {
+                    var res = _dbContext.GameInfoPlayerCountTags.Remove(await GetByIDAsync(entityKey));
+                    await SaveChangesAsync();
+
+                    return res;
+                });
                 return (await task);
             }
 

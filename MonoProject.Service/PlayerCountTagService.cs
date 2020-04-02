@@ -14,6 +14,25 @@ namespace MonoProject.Service
     {
         private readonly IPlayerCountTagRepository repository;
 
+        public async static Task<bool> ValidatePlayerCountTagName(string name)
+        {
+            var task = Task.Run(() =>
+            {
+                var len = name.Length;
+                var lenMax = MonoProject.Common.Common.playerCountTagMaxNameLength;
+
+                if ((len == 0) || (len > lenMax))
+                {
+                    return true;
+                }
+
+                throw new Exception(String.Format("GameInfo name length ({0}) not in range [{1}, {2}], name = \"{3}\"", len, 1, lenMax, name));
+            });
+
+            await task;
+            return task.Result;
+        }
+
         public PlayerCountTagService(IPlayerCountTagRepository _repository)
         {
             repository = _repository;
@@ -28,7 +47,7 @@ namespace MonoProject.Service
         {
             try
             {
-                await GameService.ValidatePlayerCountTagName(entityToInsert.Name);
+                await ValidatePlayerCountTagName(entityToInsert.Name);
             }
             catch (Exception e)
             {
@@ -43,7 +62,7 @@ namespace MonoProject.Service
         {
             try
             {
-                await GameService.ValidatePlayerCountTagName(entityToUpdate.Name);
+                await ValidatePlayerCountTagName(entityToUpdate.Name);
             }
             catch (Exception e)
             {
