@@ -26,44 +26,33 @@ namespace MonoProject.Repository
 
         public async Task<IGameInfoPlayerCountTag> InsertAsync(IGameInfoPlayerCountTag entityToInsert)
         {
-            var task = Task.Run(async () => { 
-                var res = _dbContext.GameInfoPlayerCountTags.Add(entityToInsert);
-                await SaveChangesAsync();
+            _dbContext.GameInfoPlayerCountTags.Add(entityToInsert);
+            await SaveChangesAsync();
 
-                return res;
-            });
-
-            return await task;
+            return entityToInsert;
         }
 
         public async Task<IGameInfoPlayerCountTag> UpdateAsync(IGameInfoPlayerCountTag entityToUpdate)
         {
-            var task = Task.Run(async () =>
-            {
-                _dbContext.GameInfoPlayerCountTags.Attach(entityToUpdate);
-                var entry = _dbContext.Entry(entityToUpdate);
+            _dbContext.GameInfoPlayerCountTags.Attach(entityToUpdate);
+            var entry = _dbContext.Entry(entityToUpdate);
 
-                entry.Entity.DateUpdated = System.DateTime.Now;
-                await SaveChangesAsync();
+            entry.Entity.DateUpdated = System.DateTime.Now;
+            await SaveChangesAsync();
 
-                return entry;
-            });
-
-            await task;
-            return task.Result.Entity;
+            return entry.Entity;
         }
 
         public async Task<IGameInfoPlayerCountTag> DeleteAsync(int entityKey)
         {
-            if (GetByIDAsync(entityKey) != null)
-            {
-                var task = Task.Run(async () => {
-                    var res = _dbContext.GameInfoPlayerCountTags.Remove(await GetByIDAsync(entityKey));
-                    await SaveChangesAsync();
+            var entity = await GetByIDAsync(entityKey);
 
-                    return res;
-                });
-                return (await task);
+            if (entity != null)
+            {
+                _dbContext.GameInfoPlayerCountTags.Remove(entity);
+                await SaveChangesAsync();
+
+                return entity;
             }
 
             return null;

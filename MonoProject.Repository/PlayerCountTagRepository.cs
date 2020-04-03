@@ -26,45 +26,33 @@ namespace MonoProject.Repository
 
         public async Task<IPlayerCountTag> InsertAsync(IPlayerCountTag entityToInsert)
         {
-            var task = Task.Run(async () => {
-                var res = _dbContext.PlayerCountTags.Add(entityToInsert);
-                await SaveChangesAsync();
+            _dbContext.PlayerCountTags.Add(entityToInsert);
+            await SaveChangesAsync();
 
-                return res;
-            });
-
-            return await task;
+            return entityToInsert;
         }
 
         public async Task<IPlayerCountTag> UpdateAsync(IPlayerCountTag entityToUpdate)
         {
-            var task = Task.Run(async () =>
-            {
-                _dbContext.PlayerCountTags.Attach(entityToUpdate);
-                var entry = _dbContext.Entry(entityToUpdate);
+            _dbContext.PlayerCountTags.Attach(entityToUpdate);
+            var entry = _dbContext.Entry(entityToUpdate);
 
-                entry.Entity.DateUpdated = System.DateTime.Now;
-                await SaveChangesAsync();
+            entry.Entity.DateUpdated = System.DateTime.Now;
+            await SaveChangesAsync();
 
-                return entry;
-            });
-
-            await task;
-            return task.Result.Entity;
+            return entry.Entity;
         }
 
         public async Task<IPlayerCountTag> DeleteAsync(int entityKey)
         {
-            if (GetByIDAsync(entityKey) != null)
+            var entity = await GetByIDAsync(entityKey);
+
+            if (entity != null)
             {
-                var task = Task.Run(async () => {
-                    var res = _dbContext.PlayerCountTags.Remove(await GetByIDAsync(entityKey));
-                    await SaveChangesAsync();
+                _dbContext.PlayerCountTags.Remove(entity);
+                await SaveChangesAsync();
 
-                    return res;
-                });
-
-                return (await task);
+                return entity;
             }
 
             return null;
@@ -72,7 +60,7 @@ namespace MonoProject.Repository
 
         public async Task<int> SaveChangesAsync()
         {
-            return (await _dbContext.SaveChangesAsync());
+            return await _dbContext.SaveChangesAsync();
         }
     }
 }
