@@ -42,6 +42,9 @@
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.Scaffolding.EntityFramework.12.0, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.Extensions.Logging-3.0.1.0-release-silverlight-5.0\lib\Ninject.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -57,6 +60,7 @@
     <Compile Include="GameInfoRepository.cs" />
     <Compile Include="PlayerCountTagRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepositoryBinds.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MonoProject.DAL\MonoProject.DAL.csproj">

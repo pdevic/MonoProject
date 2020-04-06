@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.Extensions.Logging-3.0.1.0-release-silverlight-5.0\lib\Ninject.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,6 +48,7 @@
     <Compile Include="PlayerCountTagService.cs" />
     <Compile Include="GameInfoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceBinds.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MonoProject.Common\MonoProject.Common.csproj">

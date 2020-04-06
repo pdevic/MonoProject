@@ -50,3 +50,5 @@ C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\bin\Debu
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\bin\Debug\Microsoft.MSXML.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\bin\Debug\Microsoft.AspNet.Scaffolding.EntityFramework.12.0.xml
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\bin\Debug\Microsoft.AspNet.Scaffolding.12.0.xml
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\bin\Debug\Ninject.dll
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\bin\Debug\Ninject.xml

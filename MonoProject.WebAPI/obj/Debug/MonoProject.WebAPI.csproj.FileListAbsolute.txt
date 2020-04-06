@@ -182,3 +182,7 @@ C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\obj\Debug\Mo
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\obj\Debug\MonoProject.WebAPI.csproj.CopyComplete
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\obj\Debug\MonoProject.WebAPI.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\obj\Debug\MonoProject.WebAPI.pdb
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\MonoProject.Service.Common.dll
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\MonoProject.Model.Common.dll
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\MonoProject.Service.Common.pdb
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\MonoProject.Model.Common.pdb

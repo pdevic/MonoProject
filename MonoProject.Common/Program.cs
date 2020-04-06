@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Ninject;
+
 namespace MonoProject.Common
 {
-    public class Common
+    class Program
     {
-        public const int gameInfoMaxNameLength = 50;
-        public const int playerCountTagMaxNameLength = 20;
     }
 }
