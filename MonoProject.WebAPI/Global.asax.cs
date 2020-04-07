@@ -7,12 +7,23 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
+using Autofac;
+
+using MonoProject.Service;
+
 namespace MonoProject.WebAPI
 {
     public class WebApiApplication : System.Web.HttpApplication
     {
+        private static IContainer container { get; set; }
+
         protected void Application_Start()
         {
+            var builder = new ContainerBuilder();
+
+            ServiceBinds.RegisterTypes(builder);
+            container = builder.Build();
+
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

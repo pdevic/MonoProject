@@ -4,18 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using Ninject.Modules;
+using Autofac;
 
+using MonoProject.Repository;
 using MonoProject.Service.Common;
 
 namespace MonoProject.Service
 {
-    public class ServiceBinds : NinjectModule
+    public class ServiceBinds
     {
-        public override void Load()
+        public static void RegisterTypes(ContainerBuilder builder)
         {
-            Bind<IGameInfoService>().To<GameInfoService>();
-            Bind<IPlayerCountTagService>().To<PlayerCountTagService>();
+            RepositoryBinds.RegisterTypes(builder);
+
+            builder.RegisterType<GameInfoService>().As<IGameInfoService>();
+            builder.RegisterType<PlayerCountTagService>().As<PlayerCountTagService>();
         }
     }
 }

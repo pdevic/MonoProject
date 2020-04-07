@@ -4,19 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using Ninject.Modules;
+using Autofac;
 
 using MonoProject.Model.Common;
 
 namespace MonoProject.Model
 {
-    public class ModelBinds : NinjectModule
+    public class ModelBinds
     {
-        public override void Load()
+        public static void RegisterTypes(ContainerBuilder builder)
         {
-            Bind<IGameInfo>().To<GameInfo>();
-            Bind<IPlayerCountTag>().To<PlayerCountTag>();
-            Bind<IGameInfoPlayerCountTag>().To<GameInfoPlayerCountTag>();
+            builder.RegisterType<GameInfo>().As<IGameInfo>();
+            builder.RegisterType<PlayerCountTag>().As<PlayerCountTag>();
+            builder.RegisterType<GameInfoPlayerCountTag>().As<GameInfoPlayerCountTag>();
         }
     }
 }

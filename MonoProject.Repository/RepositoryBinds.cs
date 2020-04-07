@@ -4,19 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using Ninject.Modules;
+using Autofac;
 
+using MonoProject.Model;
 using MonoProject.Repository.Common;
 
 namespace MonoProject.Repository
 {
-    public class RepositoryBinds : NinjectModule
+    public class RepositoryBinds
     {
-        public override void Load()
+        public static void RegisterTypes(ContainerBuilder builder)
         {
-            Bind<IGameInfoRepository>().To<GameInfoRepository>();
-            Bind<IPlayerCountTagRepository>().To<PlayerCountTagRepository>();
-            Bind<IGameInfoPlayerCountTagRepository>().To<GameInfoPlayerCountTagRepository>();
+            ModelBinds.RegisterTypes(builder);
+
+            builder.RegisterType<GameInfoRepository>().As<IGameInfoRepository>();
+            builder.RegisterType<PlayerCountTagRepository>().As<PlayerCountTagRepository>();
+            builder.RegisterType<GameInfoPlayerCountTagRepository>().As<GameInfoPlayerCountTagRepository>();
         }
     }
 }

@@ -14,3 +14,14 @@ C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service.Common\bin\
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service.Common\bin\Debug\MonoProject.Model.Common.pdb
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service.Common\bin\Debug\MonoProject.Repository.Common.pdb
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service.Common\obj\Debug\MonoProject.Service.Common.csproj.CopyComplete
+C:\Users\Jupiter\Desktop\MonoProject\MonoProject.Service.Common\bin\Debug\MonoProject.Service.Common.dll
+C:\Users\Jupiter\Desktop\MonoProject\MonoProject.Service.Common\bin\Debug\MonoProject.Service.Common.pdb
+C:\Users\Jupiter\Desktop\MonoProject\MonoProject.Service.Common\bin\Debug\MonoProject.Model.Common.dll
+C:\Users\Jupiter\Desktop\MonoProject\MonoProject.Service.Common\bin\Debug\MonoProject.Repository.Common.dll
+C:\Users\Jupiter\Desktop\MonoProject\MonoProject.Service.Common\bin\Debug\MonoProject.Model.Common.pdb
+C:\Users\Jupiter\Desktop\MonoProject\MonoProject.Service.Common\bin\Debug\MonoProject.Repository.Common.pdb
+C:\Users\Jupiter\Desktop\MonoProject\MonoProject.Service.Common\obj\Debug\MonoProject.Service.Common.csprojAssemblyReference.cache
+C:\Users\Jupiter\Desktop\MonoProject\MonoProject.Service.Common\obj\Debug\MonoProject.Service.Common.csproj.CoreCompileInputs.cache
+C:\Users\Jupiter\Desktop\MonoProject\MonoProject.Service.Common\obj\Debug\MonoProject.Service.Common.csproj.CopyComplete
+C:\Users\Jupiter\Desktop\MonoProject\MonoProject.Service.Common\obj\Debug\MonoProject.Service.Common.dll
+C:\Users\Jupiter\Desktop\MonoProject\MonoProject.Service.Common\obj\Debug\MonoProject.Service.Common.pdb
