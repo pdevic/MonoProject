@@ -5,21 +5,25 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Autofac;
+//using AutoMapper;
+
+using MonoProject.DAL;
 
 using MonoProject.Model;
 using MonoProject.Repository.Common;
 
 namespace MonoProject.Repository
 {
-    public class RepositoryBinds
+    public class RepositoryBinds : Module
     {
-        public static void RegisterTypes(ContainerBuilder builder)
+        protected override void Load(ContainerBuilder builder)
         {
-            ModelBinds.RegisterTypes(builder);
+            builder.RegisterModule<ModelBinds>();
 
             builder.RegisterType<GameInfoRepository>().As<IGameInfoRepository>();
-            builder.RegisterType<PlayerCountTagRepository>().As<PlayerCountTagRepository>();
-            builder.RegisterType<GameInfoPlayerCountTagRepository>().As<GameInfoPlayerCountTagRepository>();
+            builder.RegisterType<PlayerCountTagRepository>().As<IPlayerCountTagRepository>();
+            builder.RegisterType<GameInfoPlayerCountTagRepository>().As<IGameInfoPlayerCountTagRepository>();
+            builder.RegisterType<GameContext>().AsSelf().InstancePerLifetimeScope();
         }
     }
 }

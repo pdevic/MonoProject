@@ -49,6 +49,15 @@
     <Reference Include="Autofac, Version=5.1.2.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\packages\Autofac.5.1.2\lib\net461\Autofac.dll</HintPath>
     </Reference>
+    <Reference Include="Autofac.Integration.Mvc, Version=5.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Mvc5.5.0.0\lib\net461\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper, Version=9.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.9.0.0\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Contrib.Autofac.DependencyInjection, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.Contrib.Autofac.DependencyInjection.3.1.0\lib\netstandard2.0\AutoMapper.Contrib.Autofac.DependencyInjection.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -242,11 +251,11 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\GameInfo\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\GameInfo\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -278,6 +287,18 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MonoProject.Common\MonoProject.Common.csproj">
+      <Project>{b8f07712-ab77-431e-948b-893ab911d9f4}</Project>
+      <Name>MonoProject.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MonoProject.Model.Common\MonoProject.Model.Common.csproj">
+      <Project>{e92934c4-ec5a-41bc-894e-4581e0964f32}</Project>
+      <Name>MonoProject.Model.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MonoProject.Repository.Common\MonoProject.Repository.Common.csproj">
+      <Project>{cb4db3d8-3375-4ed0-a0d8-60c7126f0a95}</Project>
+      <Name>MonoProject.Repository.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MonoProject.Service.Common\MonoProject.Service.Common.csproj">
       <Project>{fa696201-fc57-406e-9bfd-cf31d5b17d61}</Project>
       <Name>MonoProject.Service.Common</Name>

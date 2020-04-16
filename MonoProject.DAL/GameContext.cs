@@ -11,6 +11,7 @@ namespace MonoProject.DAL
         public GameContext()
             : base("name=GameContext")
         {
+            
         }
 
         public DbSet<IGameInfo> GameInfos { get; set; }

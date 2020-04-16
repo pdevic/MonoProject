@@ -5,20 +5,21 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Autofac;
+//using AutoMapper;
 
 using MonoProject.Repository;
 using MonoProject.Service.Common;
 
 namespace MonoProject.Service
 {
-    public class ServiceBinds
+    public class ServiceBinds : Module
     {
-        public static void RegisterTypes(ContainerBuilder builder)
+        protected override void Load(ContainerBuilder builder)
         {
-            RepositoryBinds.RegisterTypes(builder);
+            builder.RegisterModule<RepositoryBinds>();
 
             builder.RegisterType<GameInfoService>().As<IGameInfoService>();
-            builder.RegisterType<PlayerCountTagService>().As<PlayerCountTagService>();
+            builder.RegisterType<PlayerCountTagService>().As<IPlayerCountTagService>();
         }
     }
 }

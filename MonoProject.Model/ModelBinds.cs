@@ -5,18 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Autofac;
+//using AutoMapper;
 
 using MonoProject.Model.Common;
 
 namespace MonoProject.Model
 {
-    public class ModelBinds
+    public class ModelBinds : Module
     {
-        public static void RegisterTypes(ContainerBuilder builder)
+        protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterType<GameInfo>().As<IGameInfo>();
-            builder.RegisterType<PlayerCountTag>().As<PlayerCountTag>();
-            builder.RegisterType<GameInfoPlayerCountTag>().As<GameInfoPlayerCountTag>();
+            builder.RegisterType<PlayerCountTag>().As<IPlayerCountTag>();
+            builder.RegisterType<GameInfoPlayerCountTag>().As<IGameInfoPlayerCountTag>();
         }
     }
 }

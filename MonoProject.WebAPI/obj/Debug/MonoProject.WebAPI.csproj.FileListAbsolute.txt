@@ -397,3 +397,15 @@ C:\Users\Jupiter\Desktop\MonoProject\MonoProject.WebAPI\bin\MonoProject.Reposito
 C:\Users\Jupiter\Desktop\MonoProject\MonoProject.WebAPI\bin\MonoProject.DAL.pdb
 C:\Users\Jupiter\Desktop\MonoProject\MonoProject.WebAPI\bin\MonoProject.DAL.dll.config
 C:\Users\Jupiter\Desktop\MonoProject\MonoProject.WebAPI\bin\MonoProject.Model.pdb
+C:\Users\Jupiter\Desktop\MonoProject\MonoProject.WebAPI\bin\AutoMapper.dll
+C:\Users\Jupiter\Desktop\MonoProject\MonoProject.WebAPI\bin\AutoMapper.pdb
+C:\Users\Jupiter\Desktop\MonoProject\MonoProject.WebAPI\bin\AutoMapper.xml
+C:\Users\Jupiter\Desktop\MonoProject\MonoProject.WebAPI\bin\MonoProject.Common.dll
+C:\Users\Jupiter\Desktop\MonoProject\MonoProject.WebAPI\bin\MonoProject.Common.pdb
+C:\Users\Jupiter\Desktop\MonoProject\MonoProject.WebAPI\bin\AutoMapper.Contrib.Autofac.DependencyInjection.dll
+C:\Users\Jupiter\Desktop\MonoProject\MonoProject.WebAPI\bin\AutoMapper.Contrib.Autofac.DependencyInjection.pdb
+C:\Users\Jupiter\Desktop\MonoProject\MonoProject.WebAPI\bin\Autofac.Integration.Mvc.dll
+C:\Users\Jupiter\Desktop\MonoProject\MonoProject.WebAPI\bin\MonoProject.Common.dll.config
+C:\Users\Jupiter\Desktop\MonoProject\MonoProject.WebAPI\bin\MonoProject.Service.dll.config
+C:\Users\Jupiter\Desktop\MonoProject\MonoProject.WebAPI\bin\Autofac.Integration.Mvc.xml
+C:\Users\Jupiter\Desktop\MonoProject\MonoProject.WebAPI\bin\MonoProject.Model.dll.config
