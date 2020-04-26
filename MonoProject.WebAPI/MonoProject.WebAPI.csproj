@@ -295,9 +295,17 @@
       <Project>{e92934c4-ec5a-41bc-894e-4581e0964f32}</Project>
       <Name>MonoProject.Model.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MonoProject.Model\MonoProject.Model.csproj">
+      <Project>{009dd705-a5eb-4a71-a27f-bb25846f531b}</Project>
+      <Name>MonoProject.Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MonoProject.Repository.Common\MonoProject.Repository.Common.csproj">
       <Project>{cb4db3d8-3375-4ed0-a0d8-60c7126f0a95}</Project>
       <Name>MonoProject.Repository.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MonoProject.Repository\MonoProject.Repository.csproj">
+      <Project>{90361fd1-9089-49ed-bde8-9611cd6eea07}</Project>
+      <Name>MonoProject.Repository</Name>
     </ProjectReference>
     <ProjectReference Include="..\MonoProject.Service.Common\MonoProject.Service.Common.csproj">
       <Project>{fa696201-fc57-406e-9bfd-cf31d5b17d61}</Project>

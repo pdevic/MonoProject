@@ -11,6 +11,9 @@ using Autofac;
 using Autofac.Integration.Mvc;
 
 using MonoProject.Model.Common;
+
+using MonoProject.Model;
+using MonoProject.Repository;
 using MonoProject.Service;
 
 namespace MonoProject.WebAPI
@@ -23,6 +26,8 @@ namespace MonoProject.WebAPI
         {
             var builder = new ContainerBuilder();
 
+            builder.RegisterModule<ModelBinds>();
+            builder.RegisterModule<RepositoryBinds>();
             builder.RegisterModule<ServiceBinds>();
             builder.RegisterControllers(typeof(WebApiApplication).Assembly);
 

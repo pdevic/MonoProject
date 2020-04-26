@@ -3,21 +3,20 @@ namespace MonoProject.DAL
     using System;
     using System.Data.Entity;
     using System.Linq;
-
-    using MonoProject.Model.Common;
+    using MonoProject.Model;
 
     public class GameContext : DbContext
     {
         public GameContext()
-            : base("name=GameContext")
+            : base("GameContext")
         {
             
         }
 
-        public DbSet<IGameInfo> GameInfos { get; set; }
-        public DbSet<IPlayerCountTag> PlayerCountTags { get; set; }
+        public DbSet<GameInfo> GameInfos { get; set; }
+        public DbSet<PlayerCountTag> PlayerCountTags { get; set; }
 
-        public DbSet<IGameInfoPlayerCountTag> GameInfoPlayerCountTags { get; set; }
+        public DbSet<GameInfoPlayerCountTag> GameInfoPlayerCountTags { get; set; }
 
     }
 

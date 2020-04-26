@@ -148,8 +148,6 @@ C:\Users\Jupiter\Desktop\MonoProject\MonoProject.Service\bin\Debug\MonoProject.R
 C:\Users\Jupiter\Desktop\MonoProject\MonoProject.Service\bin\Debug\MonoProject.DAL.pdb
 C:\Users\Jupiter\Desktop\MonoProject\MonoProject.Service\bin\Debug\MonoProject.DAL.dll.config
 C:\Users\Jupiter\Desktop\MonoProject\MonoProject.Service\bin\Debug\EntityFramework.xml
-C:\Users\Jupiter\Desktop\MonoProject\MonoProject.Service\bin\Debug\MonoProject.Model.dll
-C:\Users\Jupiter\Desktop\MonoProject\MonoProject.Service\bin\Debug\MonoProject.Model.pdb
 C:\Users\Jupiter\Desktop\MonoProject\MonoProject.Service\bin\Debug\AutoMapper.dll
 C:\Users\Jupiter\Desktop\MonoProject\MonoProject.Service\bin\Debug\AutoMapper.pdb
 C:\Users\Jupiter\Desktop\MonoProject\MonoProject.Service\bin\Debug\AutoMapper.xml
@@ -170,4 +168,6 @@ C:\Users\Jupiter\Desktop\MonoProject\MonoProject.Service\bin\Debug\System.Web.Ra
 C:\Users\Jupiter\Desktop\MonoProject\MonoProject.Service\bin\Debug\System.Web.WebPages.xml
 C:\Users\Jupiter\Desktop\MonoProject\MonoProject.Service\bin\Debug\System.Web.WebPages.Deployment.xml
 C:\Users\Jupiter\Desktop\MonoProject\MonoProject.Service\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\Jupiter\Desktop\MonoProject\MonoProject.Service\bin\Debug\MonoProject.Model.dll
+C:\Users\Jupiter\Desktop\MonoProject\MonoProject.Service\bin\Debug\MonoProject.Model.pdb
 C:\Users\Jupiter\Desktop\MonoProject\MonoProject.Service\bin\Debug\MonoProject.Model.dll.config

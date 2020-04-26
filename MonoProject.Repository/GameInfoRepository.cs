@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Autofac;
+
 using MonoProject.DAL;
 using MonoProject.Model.Common;
 using MonoProject.Repository.Common;
@@ -26,7 +28,7 @@ namespace MonoProject.Repository
 
         public async Task<IGameInfo> InsertAsync(IGameInfo entityToInsert)
         {
-            _dbContext.GameInfos.Add(entityToInsert);
+            _dbContext.Set<IGameInfo>().Add(entityToInsert);
             await SaveChangesAsync();
 
             return entityToInsert;
@@ -34,7 +36,7 @@ namespace MonoProject.Repository
 
         public async Task<IGameInfo> UpdateAsync(IGameInfo entityToUpdate)
         {
-            _dbContext.GameInfos.Attach(entityToUpdate);
+            _dbContext.Set<IGameInfo>().Attach(entityToUpdate);
             var entry = _dbContext.Entry(entityToUpdate);
 
             entry.Entity.DateUpdated = System.DateTime.Now;
@@ -49,7 +51,7 @@ namespace MonoProject.Repository
 
             if (entity != null)
             {
-                _dbContext.GameInfos.Remove(entity);
+                _dbContext.Set<IGameInfo>().Remove(entity);
                 await SaveChangesAsync();
 
                 return entity;

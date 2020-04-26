@@ -18,8 +18,6 @@ namespace MonoProject.Repository
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterModule<ModelBinds>();
-
             builder.RegisterType<GameInfoRepository>().As<IGameInfoRepository>();
             builder.RegisterType<PlayerCountTagRepository>().As<IPlayerCountTagRepository>();
             builder.RegisterType<GameInfoPlayerCountTagRepository>().As<IGameInfoPlayerCountTagRepository>();
