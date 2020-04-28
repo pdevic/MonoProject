@@ -1,4 +1,3 @@
-﻿<div class="container">
-    This is the index page <br>
-    <a class="navbar-brand" asp-controller="GameInfo" asp-action="Index">Browse games</a>
-</div>
+﻿<h2>Project index</h2>
+
+@Html.ActionLink("Browse games", "Index", "Games", new { area = "" }, null)

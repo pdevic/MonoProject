@@ -10,7 +10,7 @@ namespace MonoProject.WebAPI.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "Index";
+            ViewBag.Title = "Home Page";
 
             return View();
         }

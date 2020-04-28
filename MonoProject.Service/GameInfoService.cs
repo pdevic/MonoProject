@@ -18,15 +18,17 @@ namespace MonoProject.Service
         {
             var task = Task.Run(() =>
             {
-                var len = name.Length;
-                var lenMax = MonoProject.Common.Common.gameInfoMaxNameLength;
+                int len = name.Length;
+                int lenMax = MonoProject.Common.Common.gameInfoMaxNameLength;
 
-                if ((len == 0) || (len > lenMax))
+                if ((len > 0) && (len < lenMax))
                 {
                     return true;
                 }
-
-                throw new Exception(String.Format("GameInfo name length ({0}) not in range [{1}, {2}], name = \"{3}\"", len, 1, lenMax, name));
+                else
+                {
+                    throw new Exception(String.Format("GameInfo name length ({0}) not in range [{1}, {2}], name = \"{3}\"", len, 1, lenMax, name));
+                }
             });
 
             await task;
@@ -38,6 +40,11 @@ namespace MonoProject.Service
             repository = _repository;
         }
 
+        public IEnumerable<IGameInfo> TestList()
+        {
+            return repository.TestList();
+        }
+
         public async Task<IGameInfo> GetByIDAsync(int entityKey)
         {
             return await repository.GetByIDAsync(entityKey);
@@ -45,6 +52,7 @@ namespace MonoProject.Service
 
         public async Task<IGameInfo> InsertAsync(IGameInfo entityToInsert)
         {
+
             try
             {
                 await ValidateGameInfoName(entityToInsert.Name);
@@ -64,7 +72,7 @@ namespace MonoProject.Service
             {
                 await ValidateGameInfoName(entityToUpdate.Name);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 System.Console.WriteLine(e.Message);
                 throw new Exception("GameInfoService failed to update a GameInfo instance");

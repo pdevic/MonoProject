@@ -18,10 +18,10 @@ namespace MonoProject.Service
         {
             var task = Task.Run(() =>
             {
-                var len = name.Length;
-                var lenMax = MonoProject.Common.Common.playerCountTagMaxNameLength;
+                int len = name.Length;
+                int lenMax = MonoProject.Common.Common.playerCountTagMaxNameLength;
 
-                if ((len == 0) || (len > lenMax))
+                if ((len > 0) && (len < lenMax))
                 {
                     return true;
                 }

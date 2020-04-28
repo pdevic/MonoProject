@@ -8,8 +8,8 @@ using Autofac;
 //using AutoMapper;
 
 using MonoProject.DAL;
-
 using MonoProject.Model;
+using MonoProject.Model.Common;
 using MonoProject.Repository.Common;
 
 namespace MonoProject.Repository

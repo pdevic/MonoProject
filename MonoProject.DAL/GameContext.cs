@@ -8,7 +8,7 @@ namespace MonoProject.DAL
     public class GameContext : DbContext
     {
         public GameContext()
-            : base("GameContext")
+            : base("GameDatabase")
         {
             
         }
@@ -17,6 +17,16 @@ namespace MonoProject.DAL
         public DbSet<PlayerCountTag> PlayerCountTags { get; set; }
 
         public DbSet<GameInfoPlayerCountTag> GameInfoPlayerCountTags { get; set; }
+
+        /*protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            Database.SetInitializer<GameContext>(null);
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<GameInfo>().ToTable("GameInfo");
+            modelBuilder.Entity<PlayerCountTag>().ToTable("PlayerCountTag");
+            modelBuilder.Entity<GameInfoPlayerCountTag>().ToTable("GameInfoPlayerCountTag");
+        }*/
 
     }
 

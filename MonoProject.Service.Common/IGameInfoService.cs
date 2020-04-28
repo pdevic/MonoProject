@@ -10,5 +10,6 @@ namespace MonoProject.Service.Common
 {
     public interface IGameInfoService : IRepositoryService<IGameInfo, int>
     {
+        IEnumerable<IGameInfo> TestList();
     }
 }
