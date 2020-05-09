@@ -16,7 +16,7 @@ namespace MonoProject.Repository.Common
 
         Task<TEntity> InsertAsync(TEntity entityToInsert);
         Task<TEntity> UpdateAsync(TEntity entityToUpdate);
-        Task<TEntity> DeleteAsync(TKey entityKey);
+        Task<bool> DeleteAsync(TKey entityKey);
 
         Task<int> SaveChangesAsync();
     }

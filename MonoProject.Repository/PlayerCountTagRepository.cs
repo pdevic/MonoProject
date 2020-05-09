@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using MonoProject.DAL;
+using MonoProject.Model;
 using MonoProject.Model.Common;
 using MonoProject.Repository.Common;
 
@@ -26,7 +27,7 @@ namespace MonoProject.Repository
 
         public async Task<IPlayerCountTag> InsertAsync(IPlayerCountTag entityToInsert)
         {
-            _dbContext.Set<IPlayerCountTag>().Add(entityToInsert);
+            _dbContext.Set<PlayerCountTag>().Add((PlayerCountTag)entityToInsert);
             await SaveChangesAsync();
 
             return entityToInsert;
@@ -34,7 +35,7 @@ namespace MonoProject.Repository
 
         public async Task<IPlayerCountTag> UpdateAsync(IPlayerCountTag entityToUpdate)
         {
-            _dbContext.Set<IPlayerCountTag>().Attach(entityToUpdate);
+            _dbContext.Set<PlayerCountTag>().Attach((PlayerCountTag)entityToUpdate);
             var entry = _dbContext.Entry(entityToUpdate);
 
             entry.Entity.DateUpdated = System.DateTime.Now;
@@ -43,19 +44,19 @@ namespace MonoProject.Repository
             return entry.Entity;
         }
 
-        public async Task<IPlayerCountTag> DeleteAsync(int entityKey)
+        public async Task<bool> DeleteAsync(int entityKey)
         {
             var entity = await GetByIDAsync(entityKey);
 
             if (entity != null)
             {
-                _dbContext.Set<IPlayerCountTag>().Remove(entity);
+                _dbContext.Set<PlayerCountTag>().Remove((PlayerCountTag)entity);
                 await SaveChangesAsync();
 
-                return entity;
+                return true;
             }
 
-            return null;
+            return false;
         }
 
         public async Task<int> SaveChangesAsync()

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using MonoProject.DAL;
+using MonoProject.Model;
 using MonoProject.Model.Common;
 using MonoProject.Repository.Common;
 
@@ -26,7 +27,7 @@ namespace MonoProject.Repository
 
         public async Task<IGameInfoPlayerCountTag> InsertAsync(IGameInfoPlayerCountTag entityToInsert)
         {
-            _dbContext.Set<IGameInfoPlayerCountTag>().Add(entityToInsert);
+            _dbContext.Set<GameInfoPlayerCountTag>().Add((GameInfoPlayerCountTag)entityToInsert);
             await SaveChangesAsync();
 
             return entityToInsert;
@@ -34,7 +35,7 @@ namespace MonoProject.Repository
 
         public async Task<IGameInfoPlayerCountTag> UpdateAsync(IGameInfoPlayerCountTag entityToUpdate)
         {
-            _dbContext.Set<IGameInfoPlayerCountTag>().Attach(entityToUpdate);
+            _dbContext.Set<GameInfoPlayerCountTag>().Attach((GameInfoPlayerCountTag)entityToUpdate);
             var entry = _dbContext.Entry(entityToUpdate);
 
             entry.Entity.DateUpdated = System.DateTime.Now;
@@ -43,19 +44,19 @@ namespace MonoProject.Repository
             return entry.Entity;
         }
 
-        public async Task<IGameInfoPlayerCountTag> DeleteAsync(int entityKey)
+        public async Task<bool> DeleteAsync(int entityKey)
         {
             var entity = await GetByIDAsync(entityKey);
 
             if (entity != null)
             {
-                _dbContext.Set<IGameInfoPlayerCountTag>().Remove(entity);
+                _dbContext.Set<GameInfoPlayerCountTag>().Remove((GameInfoPlayerCountTag)entity);
                 await SaveChangesAsync();
 
-                return entity;
+                return true;
             }
 
-            return null;
+            return false;
         }
 
         public async Task<int> SaveChangesAsync()

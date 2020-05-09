@@ -1,0 +1,11 @@
+﻿@model MonoProject.Model.GameInfo
+
+@{
+    ViewBag.Title = "View";
+}
+
+<div><h2>@Html.DisplayFor(model => model.Name)</h2></div>
+<div>@Html.DisplayFor(model => model.Description)</div>
+<div>@Html.DisplayFor(model => model.ReleaseDate)</div>
+<br>
+@Html.ActionLink("Delete", "Delete", "Games", new { area = "", gameID = Model.ID }, null)

@@ -34,7 +34,7 @@ namespace MonoProject.Service
             return await repository.UpdateAsync(entityToUpdate);
         }
 
-        public async Task<IGameInfoPlayerCountTag> DeleteAsync(int entityKey)
+        public async Task<bool> DeleteAsync(int entityKey)
         {
             return await repository.DeleteAsync(entityKey);
         }

@@ -239,6 +239,8 @@
     <Content Include="Views\Games\Index.cshtml" />
     <Content Include="Views\Games\View.cshtml" />
     <Content Include="Views\Games\Create.cshtml" />
+    <Content Include="Views\Games\Inspect.cshtml" />
+    <Content Include="Views\Games\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

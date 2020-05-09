@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
+using System.Web.Http.Results;
 using System.Web.Mvc;
 
 using Autofac;
@@ -27,6 +28,20 @@ namespace MonoProject.WebAPI.Controllers
             return View(gameInfoService.TestList());
         }
 
+        public async Task<ActionResult> Inspect(int gameID)
+        {
+            var entity = await gameInfoService.GetByIDAsync(gameID);
+
+            if (entity == null)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                return View(entity);
+            }
+        }
+
         public async Task<ActionResult> Create(GameInfo newGame)
         {
             if (ModelState.IsValid)
@@ -38,6 +53,22 @@ namespace MonoProject.WebAPI.Controllers
             {
                 return View(newGame);
             }
+        }
+
+        public async Task<ActionResult> Delete(int gameID)
+        {
+            var response = await gameInfoService.DeleteAsync(gameID);
+
+            if (!response)
+            {
+                ViewBag.ErrorMessage = "Record with ID = " + gameID.ToString() + " not found";
+            }
+            else
+            {
+                ViewBag.ErrorMessage = "Deleting successful";
+            }
+
+            return View();
         }
 
     }

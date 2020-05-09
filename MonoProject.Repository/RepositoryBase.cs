@@ -27,19 +27,19 @@ namespace MonoProject.Repository
             return entityToInsert;
         }
 
-        public async Task<TEntity> DeleteAsync(int id)
+        public async Task<bool> DeleteAsync(int id)
         {
             var entity = await context.Set<TEntity>().FindAsync(id);
 
-            if (entity == null)
+            if (entity != null)
             {
-                return entity;
+                context.Set<TEntity>().Remove(entity);
+                await context.SaveChangesAsync();
+
+                return true;
             }
 
-            context.Set<TEntity>().Remove(entity);
-            await context.SaveChangesAsync();
-
-            return entity;
+            return false;
         }
 
         public async Task<TEntity> GetByIDAsync(int entityKey)

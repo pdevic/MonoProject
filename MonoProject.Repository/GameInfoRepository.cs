@@ -62,19 +62,18 @@ namespace MonoProject.Repository
             return entry.Entity;
         }
 
-        public async Task<IGameInfo> DeleteAsync(int entityKey)
+        public async Task<bool> DeleteAsync(int entityKey)
         {
             var entity = await GetByIDAsync(entityKey);
 
             if (entity != null)
             {
-                _dbContext.Set<IGameInfo>().Remove(entity);
+                _dbContext.Set<GameInfo>().Remove((GameInfo)entity);
                 await SaveChangesAsync();
-
-                return entity;
+                return true;
             }
 
-            return null;
+            return false;
         }
 
         public async Task<int> SaveChangesAsync()
