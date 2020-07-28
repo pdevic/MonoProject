@@ -10,7 +10,14 @@ namespace MonoProject.Model.Common
 {
     public interface IGameInfoPlayerCountTag : IPoco
     {
-        IGameInfo GameInfo { get; set; }
-        IPlayerCountTag PlayerCountTag { get; set; }
+        //[Required]
+        int GameInfoID { get; set; }
+
+        //[Required]
+        int PlayerCountTagID { get; set; }
+
+        //IGameInfo GameInfo { get; set; }
+
+        //IPlayerCountTag PlayerCountTag { get; set; }
     }
 }

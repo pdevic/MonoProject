@@ -1,24 +1,37 @@
-﻿@model IEnumerable<MonoProject.Model.GameInfo>
+﻿@model PagedList.IPagedList<MonoProject.Common.GameInforQueryResource>
+@using PagedList.Mvc;
+
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Games";
 }
 
 <h2>Games index</h2>
 
 @Html.ActionLink("Add a new game", "Create", "Games", new { area = "" }, null)
+<br>
+<br>
+
+@using (Html.BeginForm("Index", "Games/Index", FormMethod.Get))
+{
+    <p>
+        Search by name: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        <input type="submit" value="Search" />
+    </p>
+}
 
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Name)
+                @Html.ActionLink("Name", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Description)
+                Description
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ReleaseDate)
+                @Html.ActionLink("Release date", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
             </th>
             <th></th>
         </tr>
@@ -28,7 +41,7 @@
         {
             <tr>
                 <td>
-                    @Html.ActionLink(item.Name, "Inspect", "Games", new { area = "", gameID = item.ID }, null)
+                    @Html.ActionLink(item.Name, "Get", "Games", new { area = "", gameID = item.ID }, null)
                 </td>
                 <th>
                     @Html.DisplayFor(modelItem => item.Description)
@@ -40,3 +53,7 @@
         }
     </tbody>
 </table>
+
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))

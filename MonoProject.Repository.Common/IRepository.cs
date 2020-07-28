@@ -13,6 +13,7 @@ namespace MonoProject.Repository.Common
 
         //TEntity GetByID(TKey entityKey);
         Task<TEntity> GetByIDAsync(TKey entityKey);
+        Task<IEnumerable<TEntity>> ListAsync();
 
         Task<TEntity> InsertAsync(TEntity entityToInsert);
         Task<TEntity> UpdateAsync(TEntity entityToUpdate);

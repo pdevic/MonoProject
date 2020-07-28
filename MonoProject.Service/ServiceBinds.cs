@@ -18,6 +18,7 @@ namespace MonoProject.Service
         {
             builder.RegisterType<GameInfoService>().As<IGameInfoService>();
             builder.RegisterType<PlayerCountTagService>().As<IPlayerCountTagService>();
+            builder.RegisterType<GameInfoPlayerCountTagService>().As<IGameInforPlayerCountTagService>();
         }
     }
 }

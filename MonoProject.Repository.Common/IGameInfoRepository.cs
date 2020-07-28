@@ -10,6 +10,5 @@ namespace MonoProject.Repository.Common
 {
     public interface IGameInfoRepository : IRepository<IGameInfo, int>
     {
-        IEnumerable<IGameInfo> TestList();
     }
 }

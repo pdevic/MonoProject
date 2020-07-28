@@ -14,6 +14,6 @@ namespace MonoProject.Model.Common
         string Description { get; set; }
         DateTime ReleaseDate { get; set; }
 
-        ICollection<IGameInfoPlayerCountTag> GameInfoPlayerCountTags { get; set; }
+        //ICollection<IPlayerCountTag> PlayerCountTags { get; set; }
     }
 }

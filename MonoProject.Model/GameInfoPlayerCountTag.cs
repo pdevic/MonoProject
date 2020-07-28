@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 using MonoProject.Model.Common;
 
@@ -18,7 +19,10 @@ namespace MonoProject.Model
         [Required] public DateTime DateUpdated { get; set; }
         public DateTime TimeStamp { get; set; }
 
-        public virtual IGameInfo GameInfo { get; set; }
-        public virtual IPlayerCountTag PlayerCountTag { get; set; }
+        //[Required, ForeignKey("GameInfo")]
+        public int GameInfoID { get; set; }
+
+        //[Required, ForeignKey("PlayerCountTag")]
+        public int PlayerCountTagID { get; set; }
     }
 }

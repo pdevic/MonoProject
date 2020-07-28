@@ -40,9 +40,9 @@ namespace MonoProject.Service
             repository = _repository;
         }
 
-        public IEnumerable<IGameInfo> TestList()
+        public async Task<IEnumerable<IGameInfo>> ListAsync()
         {
-            return repository.TestList();
+            return await repository.ListAsync();
         }
 
         public async Task<IGameInfo> GetByIDAsync(int entityKey)
@@ -85,5 +85,11 @@ namespace MonoProject.Service
         {
             return await repository.DeleteAsync(entityKey);
         }
+
+        /*public async Task<int> SaveChangesAsync()
+        {
+            return await repository.SaveChangesAsync();
+        }*/
+
     }
 }

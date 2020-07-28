@@ -10,6 +10,9 @@ using System.Web.Routing;
 using Autofac;
 using Autofac.Integration.Mvc;
 
+using AutoMapper;
+
+using MonoProject.Common;
 using MonoProject.Model;
 using MonoProject.Repository;
 using MonoProject.Service;

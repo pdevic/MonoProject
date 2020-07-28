@@ -1,0 +1,34 @@
+﻿@model IEnumerable<MonoProject.Model.PlayerCountTag>
+
+@{
+    ViewBag.Title = "Tags";
+}
+
+<br>
+<br>
+@Html.ActionLink("Add a new player count tag", "CreatePTag", "Tags", new { area = "" }, null)
+<br>
+<br>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.ActionLink("Name", "Index", new { sortOrder = ViewBag.NameSortParm })
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @Html.ActionLink("Delete", "DeletePTag", "Tags", new { area = "", tagID = item.ID }, null)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

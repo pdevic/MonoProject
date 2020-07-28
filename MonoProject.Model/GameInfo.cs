@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 using MonoProject.Model.Common;
 
@@ -22,6 +23,6 @@ namespace MonoProject.Model
         public string Description { get; set; }
         public DateTime ReleaseDate { get; set; }
 
-        public virtual ICollection<IGameInfoPlayerCountTag> GameInfoPlayerCountTags { get; set; }
+        //public virtual ICollection<IPlayerCountTag> PlayerCountTags { get; set; }
     }
 }

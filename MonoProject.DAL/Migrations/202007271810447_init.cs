@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Initial : DbMigration
+    public partial class init : DbMigration
     {
         public override void Up()
         {
@@ -15,6 +15,8 @@
                         DateCreated = c.DateTime(nullable: false),
                         DateUpdated = c.DateTime(nullable: false),
                         TimeStamp = c.DateTime(nullable: false),
+                        GameInfoID = c.Int(nullable: false),
+                        PlayerCountTagID = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.ID);
             

@@ -20,8 +20,6 @@ C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service\bin\Debug\M
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service\bin\Debug\MonoProject.Common.pdb
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service\bin\Debug\Ninject.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service\bin\Debug\Ninject.xml
-C:\Users\Jupiter\Desktop\MonoProject\MonoProject.Service\bin\Debug\x86\sqlite3.dll
-C:\Users\Jupiter\Desktop\MonoProject\MonoProject.Service\bin\Debug\x64\sqlite3.dll
 C:\Users\Jupiter\Desktop\MonoProject\MonoProject.Service\bin\Debug\MonoProject.Service.dll.config
 C:\Users\Jupiter\Desktop\MonoProject\MonoProject.Service\bin\Debug\MonoProject.Service.dll
 C:\Users\Jupiter\Desktop\MonoProject\MonoProject.Service\bin\Debug\MonoProject.Service.pdb

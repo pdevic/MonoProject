@@ -19,6 +19,11 @@ namespace MonoProject.Service
             repository = _repository;
         }
 
+        public async Task<IEnumerable<IGameInfoPlayerCountTag>> ListAsync()
+        {
+            return await repository.ListAsync();
+        }
+
         public async Task<IGameInfoPlayerCountTag> GetByIDAsync(int entityKey)
         {
             return await repository.GetByIDAsync(entityKey);

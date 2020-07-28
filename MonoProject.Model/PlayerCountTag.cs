@@ -19,6 +19,8 @@ namespace MonoProject.Model
         public DateTime TimeStamp { get; set; }
 
         [Required, StringLength(30)] public string Name { get; set; }
+
+        //public virtual ICollection<IGameInfo> GameInfoes { get; set; }
     }
 }
 

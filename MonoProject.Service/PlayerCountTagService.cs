@@ -38,6 +38,11 @@ namespace MonoProject.Service
             repository = _repository;
         }
 
+        public async Task<IEnumerable<IPlayerCountTag>> ListAsync()
+        {
+            return await repository.ListAsync();
+        }
+
         public async Task<IPlayerCountTag> GetByIDAsync(int entityKey)
         {
             return await repository.GetByIDAsync(entityKey);
@@ -77,5 +82,6 @@ namespace MonoProject.Service
         {
             return await repository.DeleteAsync(entityKey);
         }
+
     }
 }

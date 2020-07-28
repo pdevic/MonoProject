@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,23 +23,37 @@ namespace MonoProject.Repository
 
         public async Task<IPlayerCountTag> GetByIDAsync(int playerCountTagID)
         {
-            return (await _dbContext.PlayerCountTags.FindAsync(playerCountTagID));
+            return await _dbContext.PlayerCountTags.FindAsync(playerCountTagID);
+        }
+
+        public async Task<IEnumerable<IPlayerCountTag>> ListAsync()
+        {
+            return await _dbContext.PlayerCountTags.ToListAsync();
         }
 
         public async Task<IPlayerCountTag> InsertAsync(IPlayerCountTag entityToInsert)
         {
-            _dbContext.Set<PlayerCountTag>().Add((PlayerCountTag)entityToInsert);
+            entityToInsert.ID = Guid.NewGuid().GetHashCode();
+            entityToInsert.DateCreated = System.DateTime.Now;
+            entityToInsert.DateUpdated = System.DateTime.Now;
+            entityToInsert.TimeStamp = System.DateTime.Now;
+
+            _dbContext.PlayerCountTags.Add((PlayerCountTag)entityToInsert);
             await SaveChangesAsync();
 
-            return entityToInsert;
+            return (PlayerCountTag)entityToInsert;
         }
 
         public async Task<IPlayerCountTag> UpdateAsync(IPlayerCountTag entityToUpdate)
         {
-            _dbContext.Set<PlayerCountTag>().Attach((PlayerCountTag)entityToUpdate);
-            var entry = _dbContext.Entry(entityToUpdate);
+            var original = await _dbContext.PlayerCountTags.FindAsync(entityToUpdate.ID);
+            var entry = _dbContext.Entry(original);
+
+            entry.Entity.Name = entityToUpdate.Name;
 
             entry.Entity.DateUpdated = System.DateTime.Now;
+            entry.State = EntityState.Modified;
+
             await SaveChangesAsync();
 
             return entry.Entity;

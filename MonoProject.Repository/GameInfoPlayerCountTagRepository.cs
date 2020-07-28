@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,8 +26,18 @@ namespace MonoProject.Repository
             return await _dbContext.GameInfoPlayerCountTags.FindAsync(gameInfoPlayerCountTagID);
         }
 
+        public async Task<IEnumerable<IGameInfoPlayerCountTag>> ListAsync()
+        {
+            return await _dbContext.GameInfoPlayerCountTags.ToListAsync();
+        }
+
         public async Task<IGameInfoPlayerCountTag> InsertAsync(IGameInfoPlayerCountTag entityToInsert)
         {
+            entityToInsert.ID = Guid.NewGuid().GetHashCode();
+            entityToInsert.DateCreated = System.DateTime.Now;
+            entityToInsert.DateUpdated = System.DateTime.Now;
+            entityToInsert.TimeStamp = System.DateTime.Now;
+
             _dbContext.Set<GameInfoPlayerCountTag>().Add((GameInfoPlayerCountTag)entityToInsert);
             await SaveChangesAsync();
 
@@ -35,10 +46,12 @@ namespace MonoProject.Repository
 
         public async Task<IGameInfoPlayerCountTag> UpdateAsync(IGameInfoPlayerCountTag entityToUpdate)
         {
-            _dbContext.Set<GameInfoPlayerCountTag>().Attach((GameInfoPlayerCountTag)entityToUpdate);
-            var entry = _dbContext.Entry(entityToUpdate);
+            var original = await _dbContext.GameInfoPlayerCountTags.FindAsync(entityToUpdate.ID);
+            var entry = _dbContext.Entry(original);
 
-            entry.Entity.DateUpdated = System.DateTime.Now;
+            entry.Entity.GameInfoID = entityToUpdate.GameInfoID;
+            entry.Entity.PlayerCountTagID = entityToUpdate.PlayerCountTagID;
+
             await SaveChangesAsync();
 
             return entry.Entity;

@@ -8,6 +8,7 @@ using MonoProject.Model.Common;
 
 using MonoProject.DAL;
 using MonoProject.Repository.Common;
+using System.Data.Entity;
 
 namespace MonoProject.Repository
 {
@@ -47,10 +48,15 @@ namespace MonoProject.Repository
             return await context.Set<TEntity>().FindAsync(entityKey);
         }
 
-        public IEnumerable<TEntity> GetAll()
+        public async Task<IEnumerable<TEntity>> ListAsync()
+        {
+            return await context.Set<TEntity>().ToListAsync();
+        }
+
+        /*public IEnumerable<TEntity> GetAll()
         {
             return context.Set<TEntity>().ToList();
-        }
+        }*/
 
         public async Task<TEntity> UpdateAsync(TEntity entityToUpdate)
         {

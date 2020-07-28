@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,9 +28,9 @@ namespace MonoProject.Repository
             _dbContext = dbContext;
         }
 
-        public IEnumerable<IGameInfo> TestList()
+        public async Task<IEnumerable<IGameInfo>> ListAsync()
         {
-            return _dbContext.GameInfos.ToList();
+            return await _dbContext.GameInfos.ToListAsync();
         }
 
         public async Task<IGameInfo> GetByIDAsync(int gameInfoID)
@@ -53,10 +54,17 @@ namespace MonoProject.Repository
 
         public async Task<IGameInfo> UpdateAsync(IGameInfo entityToUpdate)
         {
-            _dbContext.GameInfos.Attach((GameInfo)entityToUpdate);
-            var entry = _dbContext.Entry(entityToUpdate);
+            var original = await _dbContext.GameInfos.FindAsync(entityToUpdate.ID);
+            var entry = _dbContext.Entry(original);
+
+            entry.Entity.Name = entityToUpdate.Name;
+            entry.Entity.Description = entityToUpdate.Description;
+            entry.Entity.ReleaseDate = entityToUpdate.ReleaseDate;
+            //entry.Entity.PlayerCountTags = entityToUpdate.PlayerCountTags;
 
             entry.Entity.DateUpdated = System.DateTime.Now;
+            entry.State = EntityState.Modified;
+
             await SaveChangesAsync();
 
             return entry.Entity;
@@ -70,6 +78,7 @@ namespace MonoProject.Repository
             {
                 _dbContext.Set<GameInfo>().Remove((GameInfo)entity);
                 await SaveChangesAsync();
+
                 return true;
             }
 
