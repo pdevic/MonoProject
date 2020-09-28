@@ -19,9 +19,9 @@ namespace MonoProject.Service
             repository = _repository;
         }
 
-        public async Task<IEnumerable<IGameInfoPlayerCountTag>> ListAsync()
+        public async Task<IEnumerable<IGameInfoPlayerCountTag>> GetListAsync()
         {
-            return await repository.ListAsync();
+            return await repository.GetListAsync();
         }
 
         public async Task<IGameInfoPlayerCountTag> GetByIDAsync(int entityKey)
@@ -31,12 +31,22 @@ namespace MonoProject.Service
 
         public async Task<IGameInfoPlayerCountTag> InsertAsync(IGameInfoPlayerCountTag entityToInsert)
         {
+            entityToInsert.ID = Guid.NewGuid().GetHashCode();
+            entityToInsert.DateCreated = System.DateTime.Now;
+            entityToInsert.DateUpdated = System.DateTime.Now;
+            entityToInsert.TimeStamp = System.DateTime.Now;
+
             return await repository.InsertAsync(entityToInsert);
         }
 
         public async Task<IGameInfoPlayerCountTag> UpdateAsync(IGameInfoPlayerCountTag entityToUpdate)
         {
-            return await repository.UpdateAsync(entityToUpdate);
+            var entry = await repository.GetByIDAsync(entityToUpdate.ID);
+
+            entry.GameInfoID = entityToUpdate.GameInfoID;
+            entry.PlayerCountTagID = entityToUpdate.PlayerCountTagID;
+
+            return await repository.UpdateAsync(entry);
         }
 
         public async Task<bool> DeleteAsync(int entityKey)

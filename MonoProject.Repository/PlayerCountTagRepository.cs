@@ -26,18 +26,13 @@ namespace MonoProject.Repository
             return await _dbContext.PlayerCountTags.FindAsync(playerCountTagID);
         }
 
-        public async Task<IEnumerable<IPlayerCountTag>> ListAsync()
+        public async Task<IEnumerable<IPlayerCountTag>> GetListAsync()
         {
             return await _dbContext.PlayerCountTags.ToListAsync();
         }
 
         public async Task<IPlayerCountTag> InsertAsync(IPlayerCountTag entityToInsert)
         {
-            entityToInsert.ID = Guid.NewGuid().GetHashCode();
-            entityToInsert.DateCreated = System.DateTime.Now;
-            entityToInsert.DateUpdated = System.DateTime.Now;
-            entityToInsert.TimeStamp = System.DateTime.Now;
-
             _dbContext.PlayerCountTags.Add((PlayerCountTag)entityToInsert);
             await SaveChangesAsync();
 
@@ -46,17 +41,10 @@ namespace MonoProject.Repository
 
         public async Task<IPlayerCountTag> UpdateAsync(IPlayerCountTag entityToUpdate)
         {
-            var original = await _dbContext.PlayerCountTags.FindAsync(entityToUpdate.ID);
-            var entry = _dbContext.Entry(original);
-
-            entry.Entity.Name = entityToUpdate.Name;
-
-            entry.Entity.DateUpdated = System.DateTime.Now;
-            entry.State = EntityState.Modified;
-
+            _dbContext.Entry(entityToUpdate).State = EntityState.Modified;
             await SaveChangesAsync();
 
-            return entry.Entity;
+            return entityToUpdate;
         }
 
         public async Task<bool> DeleteAsync(int entityKey)

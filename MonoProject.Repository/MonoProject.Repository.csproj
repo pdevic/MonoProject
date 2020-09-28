@@ -96,7 +96,6 @@
     <Compile Include="GameInfoRepository.cs" />
     <Compile Include="PlayerCountTagRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RepositoryBase.cs" />
     <Compile Include="RepositoryBinds.cs" />
   </ItemGroup>
   <ItemGroup>

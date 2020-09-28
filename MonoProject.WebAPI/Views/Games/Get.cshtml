@@ -9,23 +9,6 @@
 <div>Description: @Html.DisplayFor(model => model.Description)</div>
 <div>Release date: @Html.DisplayFor(model => model.ReleaseDate)</div>
 <br>
-@if (ViewBag.Tags != null)
-{
-    if (ViewBag.Tags.Count != 0)
-    {
-        @:Tags:
-        foreach (string item in ViewBag.Tags)
-        {
-            @Html.ActionLink(item, "Index", "Tags", new { area = "" }, null);@: 
-        }
-    }
-    else
-    {
-        @:No tags assigned.
-        @Html.ActionLink("Edit the instance to add some", "Edit", "Games", new { area = "", gameID = Model.ID }, null);
-    }
-}
-<br>
 <br>
 @Html.ActionLink("Back to games index", "Index", "Games", new { area = "" }, null)
 | @Html.ActionLink("Edit", "Edit", "Games", new { area = "", gameID = Model.ID }, null)

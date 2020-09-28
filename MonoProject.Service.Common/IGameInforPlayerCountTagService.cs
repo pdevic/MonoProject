@@ -10,6 +10,6 @@ namespace MonoProject.Service.Common
 {
     public interface IGameInforPlayerCountTagService : IRepositoryService<IGameInfoPlayerCountTag, int>
     {
-        Task<IEnumerable<IGameInfoPlayerCountTag>> ListAsync();
+        Task<IEnumerable<IGameInfoPlayerCountTag>> GetListAsync();
     }
 }

@@ -40,9 +40,9 @@ namespace MonoProject.Service
             repository = _repository;
         }
 
-        public async Task<IEnumerable<IGameInfo>> ListAsync()
+        public async Task<IEnumerable<IGameInfo>> GetListAsync()
         {
-            return await repository.ListAsync();
+            return await repository.GetListAsync();
         }
 
         public async Task<IGameInfo> GetByIDAsync(int entityKey)
@@ -52,7 +52,6 @@ namespace MonoProject.Service
 
         public async Task<IGameInfo> InsertAsync(IGameInfo entityToInsert)
         {
-
             try
             {
                 await ValidateGameInfoName(entityToInsert.Name);
@@ -62,6 +61,12 @@ namespace MonoProject.Service
                 System.Console.WriteLine(e.Message);
                 throw new Exception("GameInfoService failed to insert a GameInfo instance into its repository");
             }
+
+            entityToInsert.ID = Guid.NewGuid().GetHashCode();
+            entityToInsert.DateCreated = System.DateTime.Now;
+            entityToInsert.DateUpdated = System.DateTime.Now;
+            entityToInsert.ReleaseDate = System.DateTime.Now;
+            entityToInsert.TimeStamp = System.DateTime.Now;
 
             return await repository.InsertAsync(entityToInsert);
         }
@@ -78,18 +83,19 @@ namespace MonoProject.Service
                 throw new Exception("GameInfoService failed to update a GameInfo instance");
             }
 
-            return await repository.UpdateAsync(entityToUpdate);
+            var entry = await repository.GetByIDAsync(entityToUpdate.ID);
+
+            entry.Name = entityToUpdate.Name;
+            entry.Description = entityToUpdate.Description;
+            entry.ReleaseDate = entityToUpdate.ReleaseDate;
+
+            return await repository.UpdateAsync(entry);
         }
 
         public async Task<bool> DeleteAsync(int entityKey)
         {
             return await repository.DeleteAsync(entityKey);
         }
-
-        /*public async Task<int> SaveChangesAsync()
-        {
-            return await repository.SaveChangesAsync();
-        }*/
 
     }
 }

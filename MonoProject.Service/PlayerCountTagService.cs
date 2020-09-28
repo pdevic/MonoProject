@@ -38,9 +38,9 @@ namespace MonoProject.Service
             repository = _repository;
         }
 
-        public async Task<IEnumerable<IPlayerCountTag>> ListAsync()
+        public async Task<IEnumerable<IPlayerCountTag>> GetListAsync()
         {
-            return await repository.ListAsync();
+            return await repository.GetListAsync();
         }
 
         public async Task<IPlayerCountTag> GetByIDAsync(int entityKey)
@@ -60,6 +60,11 @@ namespace MonoProject.Service
                 throw new Exception("GameInfoService failed to insert a GameInfo instance into its repository");
             }
 
+            entityToInsert.ID = Guid.NewGuid().GetHashCode();
+            entityToInsert.DateCreated = System.DateTime.Now;
+            entityToInsert.DateUpdated = System.DateTime.Now;
+            entityToInsert.TimeStamp = System.DateTime.Now;
+
             return await repository.InsertAsync(entityToInsert);
         }
 
@@ -75,7 +80,11 @@ namespace MonoProject.Service
                 throw new Exception("PlayerCountTagService failed to update a PlayerCountTag instance");
             }
 
-            return await repository.UpdateAsync(entityToUpdate);
+            var entry = await repository.GetByIDAsync(entityToUpdate.ID);
+            entry.Name = entityToUpdate.Name;
+            entry.DateUpdated = System.DateTime.Now;
+
+            return await repository.UpdateAsync(entry);
         }
 
         public async Task<bool> DeleteAsync(int entityKey)
