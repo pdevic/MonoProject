@@ -15,14 +15,11 @@ namespace MonoProject.Model
     {
         [ScaffoldColumn(false)] public int ID { get; set; }
 
+        public int GameInfoID { get; set; }
+        public int PlayerCountTagID { get; set; }
+
         [Required] public DateTime DateCreated { get; set; }
         [Required] public DateTime DateUpdated { get; set; }
         public DateTime TimeStamp { get; set; }
-
-        //[Required, ForeignKey("GameInfo")]
-        public int GameInfoID { get; set; }
-
-        //[Required, ForeignKey("PlayerCountTag")]
-        public int PlayerCountTagID { get; set; }
     }
 }

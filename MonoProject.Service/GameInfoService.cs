@@ -12,7 +12,7 @@ namespace MonoProject.Service
 {
     public class GameInfoService : IGameInfoService
     {
-        private readonly IGameInfoRepository repository;
+        private readonly IGameInfoRepository Repository;
 
         public async static Task<bool> ValidateGameInfoName(string name)
         {
@@ -37,17 +37,17 @@ namespace MonoProject.Service
 
         public GameInfoService(IGameInfoRepository _repository)
         {
-            repository = _repository;
+            Repository = _repository;
         }
 
         public async Task<IEnumerable<IGameInfo>> GetListAsync()
         {
-            return await repository.GetListAsync();
+            return await Repository.GetListAsync();
         }
 
         public async Task<IGameInfo> GetByIDAsync(int entityKey)
         {
-            return await repository.GetByIDAsync(entityKey);
+            return await Repository.GetByIDAsync(entityKey);
         }
 
         public async Task<IGameInfo> InsertAsync(IGameInfo entityToInsert)
@@ -62,13 +62,12 @@ namespace MonoProject.Service
                 throw new Exception("GameInfoService failed to insert a GameInfo instance into its repository");
             }
 
-            entityToInsert.ID = Guid.NewGuid().GetHashCode();
             entityToInsert.DateCreated = System.DateTime.Now;
             entityToInsert.DateUpdated = System.DateTime.Now;
             entityToInsert.ReleaseDate = System.DateTime.Now;
             entityToInsert.TimeStamp = System.DateTime.Now;
 
-            return await repository.InsertAsync(entityToInsert);
+            return await Repository.InsertAsync(entityToInsert); ;
         }
 
         public async Task<IGameInfo> UpdateAsync(IGameInfo entityToUpdate)
@@ -83,18 +82,12 @@ namespace MonoProject.Service
                 throw new Exception("GameInfoService failed to update a GameInfo instance");
             }
 
-            var entry = await repository.GetByIDAsync(entityToUpdate.ID);
-
-            entry.Name = entityToUpdate.Name;
-            entry.Description = entityToUpdate.Description;
-            entry.ReleaseDate = entityToUpdate.ReleaseDate;
-
-            return await repository.UpdateAsync(entry);
+            return await Repository.UpdateAsync(entityToUpdate);
         }
 
         public async Task<bool> DeleteAsync(int entityKey)
         {
-            return await repository.DeleteAsync(entityKey);
+            return await Repository.DeleteAsync(entityKey);
         }
 
     }

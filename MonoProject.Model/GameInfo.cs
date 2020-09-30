@@ -15,14 +15,12 @@ namespace MonoProject.Model
     {
         [ScaffoldColumn(false)] public int ID { get; set; }
 
-        [Required] public DateTime DateCreated { get; set; }
-        [Required] public DateTime DateUpdated { get; set; }
-        public DateTime TimeStamp { get; set; }
-
         [Required, StringLength(50), Display(Name = "Game name")] public string Name { get; set; }
         public string Description { get; set; }
         public DateTime ReleaseDate { get; set; }
 
-        //public virtual ICollection<IPlayerCountTag> PlayerCountTags { get; set; }
+        [Required] public DateTime DateCreated { get; set; }
+        [Required] public DateTime DateUpdated { get; set; }
+        public DateTime TimeStamp { get; set; }
     }
 }

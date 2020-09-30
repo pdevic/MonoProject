@@ -13,7 +13,5 @@ namespace MonoProject.Model.Common
         [Required, StringLength(MonoProject.Common.Common.gameInfoMaxNameLength), Display(Name = "Game name")] string Name { get; set; }
         string Description { get; set; }
         DateTime ReleaseDate { get; set; }
-
-        //ICollection<IPlayerCountTag> PlayerCountTags { get; set; }
     }
 }

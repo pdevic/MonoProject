@@ -8,39 +8,56 @@ using System.Net.Http;
 using System.Web.Http;
 
 using HttpGetAttribute = System.Web.Http.HttpGetAttribute;
+using AutoMapper;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace MonoProject.WebAPI.Controllers
 {
     [System.Web.Http.RoutePrefix("api/games")]
     public class GamesController : ApiController
     {
-        private readonly IGameInfoService gameInfoService;
+        private readonly IGameInfoService GameInfoService;
+        private readonly IMapper Mapper;
 
-        public GamesController(IGameInfoService gameInfoService)
+
+
+        public class GameInfoRestBasic
         {
-            this.gameInfoService = gameInfoService;
+            [Required] public int ID { get; set; }
+            [Required] public string Name { get; set; }
+            [Required] public string Description { get; set; }
+            [Required] public DateTime ReleaseDate { get; set; }
+        }
+
+
+
+        public GamesController(IGameInfoService gameInfoService, IMapper mapper)
+        {
+            GameInfoService = gameInfoService;
+            Mapper = mapper;
         }
 
         [HttpGet]
         [Route("index")]
         public async Task<HttpResponseMessage> Index()
         {
-            return Request.CreateResponse(HttpStatusCode.OK, await gameInfoService.GetListAsync());
+            return Request.CreateResponse(HttpStatusCode.OK, Mapper.Map<List<GameInfoRestBasic>>(await GameInfoService.GetListAsync()));
         }
 
         [HttpGet]
         [Route("get/{gameID}")]
         public async Task<HttpResponseMessage> Get(int gameID)
         {
-            var entity = await gameInfoService.GetByIDAsync(gameID);
+            var entity = await GameInfoService.GetByIDAsync(gameID);
 
             if (entity == null)
             {
-                return Request.CreateResponse(HttpStatusCode.NotFound);
+                return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Entry with requested id doesn't exist in the database");
             }
             else
             {
-                return Request.CreateResponse(HttpStatusCode.OK, entity);
+                return Request.CreateResponse(HttpStatusCode.OK, Mapper.Map<GameInfoRestBasic>(entity));
             }
         }
 
@@ -50,43 +67,43 @@ namespace MonoProject.WebAPI.Controllers
         {
             if (ModelState.IsValid)
             {
-                await gameInfoService.InsertAsync(newGame);
-
-                var response = Request.CreateResponse(HttpStatusCode.Moved);
-                response.Headers.Location = new Uri("~/api/games/get/" + newGame.ID.ToString());
-
-                return response;
+                var res = Mapper.Map<GameInfoRestBasic>(await GameInfoService.InsertAsync(newGame));
+                return Request.CreateResponse(HttpStatusCode.OK, res);
             }
 
-            return Request.CreateResponse(HttpStatusCode.OK, newGame);
+            return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "null or invalid object given to create action");
         }
 
-        [HttpPost]
+        [HttpPut]
         [Route("edit")]
-        public async Task<HttpResponseMessage> Edit(GameInfo gameToUpdate)
+        public async Task<HttpResponseMessage> Edit(GameInfoRestBasic gameToUpdateRest)
         {
-            if (ModelState.IsValid)
+            var original = await GameInfoService.GetByIDAsync(gameToUpdateRest.ID);
+
+            if (original != null)
             {
-                await gameInfoService.UpdateAsync(gameToUpdate);
+                var gameToUpdate = Mapper.Map<GameInfo>(gameToUpdateRest);
 
-                var response = Request.CreateResponse(HttpStatusCode.Moved);
-                response.Headers.Location = new Uri("~/api/games/get/" + gameToUpdate.ID.ToString());
+                gameToUpdate.DateCreated = original.DateCreated;
+                gameToUpdate.DateUpdated = System.DateTime.Now;
+                gameToUpdate.TimeStamp = System.DateTime.Now;
 
-                return response;
+                var res = Mapper.Map<GameInfoRestBasic>(await GameInfoService.UpdateAsync(gameToUpdate));
+                return Request.CreateResponse(HttpStatusCode.OK, res);
             }
 
-            return Request.CreateResponse(HttpStatusCode.OK, gameToUpdate);
+            return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Invalid object or incorrect id given to update action ");
         }
 
         [HttpDelete]
         [Route("delete/{gameID}")]
         public async Task<HttpResponseMessage> Delete(int gameID)
         {
-            var result = await gameInfoService.DeleteAsync(gameID);
+            var result = await GameInfoService.DeleteAsync(gameID);
 
             if (!result)
             {
-                return Request.CreateResponse(HttpStatusCode.NotFound);
+                return Request.CreateErrorResponse(HttpStatusCode.NotFound, "No entry with the requested id exists in the database");
             }
 
             return Request.CreateResponse(HttpStatusCode.OK);

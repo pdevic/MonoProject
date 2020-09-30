@@ -159,8 +159,6 @@ C:\Users\Jupiter\Desktop\MonoProject\MonoProject.Service\obj\Debug\MonoProject.S
 C:\Users\Jupiter\Desktop\MonoProject\MonoProject.Service\obj\Debug\MonoProject.Service.csproj.CopyComplete
 C:\Users\Jupiter\Desktop\MonoProject\MonoProject.Service\obj\Debug\MonoProject.Service.dll
 C:\Users\Jupiter\Desktop\MonoProject\MonoProject.Service\obj\Debug\MonoProject.Service.pdb
-C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service\obj\Debug\MonoProject.Service.csprojAssemblyReference.cache
-C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service\obj\Debug\MonoProject.Service.csproj.CoreCompileInputs.cache
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service\bin\Debug\MonoProject.Service.dll.config
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service\bin\Debug\MonoProject.Service.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service\bin\Debug\MonoProject.Service.pdb
@@ -295,7 +293,6 @@ C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service\bin\Debug\M
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service\bin\Debug\Autofac.pdb
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service\bin\Debug\Autofac.xml
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service\bin\Debug\Autofac.Integration.Mvc.xml
-C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service\bin\Debug\AutoMapper.pdb
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service\bin\Debug\AutoMapper.xml
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service\bin\Debug\EntityFramework.xml
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service\bin\Debug\EntityFramework.SqlServer.xml
@@ -312,6 +309,8 @@ C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service\bin\Debug\M
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service\bin\Debug\MonoProject.DAL.dll.config
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service\bin\Debug\MonoProject.Model.pdb
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service\bin\Debug\MonoProject.Model.dll.config
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service\obj\Debug\MonoProject.Service.csprojAssemblyReference.cache
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service\obj\Debug\MonoProject.Service.csproj.CoreCompileInputs.cache
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service\obj\Debug\MonoProject.Service.csproj.CopyComplete
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service\obj\Debug\MonoProject.Service.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service\obj\Debug\MonoProject.Service.pdb

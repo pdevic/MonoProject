@@ -284,7 +284,6 @@ C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\bin\Debu
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\bin\Debug\Autofac.pdb
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\bin\Debug\Autofac.xml
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\bin\Debug\Autofac.Integration.Mvc.xml
-C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\bin\Debug\AutoMapper.pdb
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\bin\Debug\AutoMapper.xml
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\bin\Debug\EntityFramework.xml
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\bin\Debug\EntityFramework.SqlServer.xml

@@ -1,16 +1,15 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using System.ComponentModel.DataAnnotations;
-
 using MonoProject.Model.Common;
 
-namespace MonoProject.Model
+namespace MonoProject.DAL
 {
-    public class PlayerCountTag : IPoco, IPlayerCountTag
+    public class PlayerCountTagEntity : IPoco
     {
         [ScaffoldColumn(false)] public int ID { get; set; }
 
@@ -21,4 +20,3 @@ namespace MonoProject.Model
         public DateTime TimeStamp { get; set; }
     }
 }
-

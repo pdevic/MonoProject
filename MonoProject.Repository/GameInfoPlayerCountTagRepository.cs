@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using AutoMapper;
+
 using MonoProject.DAL;
 using MonoProject.Model;
 using MonoProject.Model.Common;
@@ -14,46 +16,51 @@ namespace MonoProject.Repository
 {
     public class GameInfoPlayerCountTagRepository : IGameInfoPlayerCountTagRepository
     {
-        private readonly GameContext _dbContext;
-
-        public GameInfoPlayerCountTagRepository(GameContext dbContext)
+        private readonly GameContext DbContext;
+        private readonly IMapper Mapper;
+        public GameInfoPlayerCountTagRepository(GameContext dbContext, IMapper mapper)
         {
-            _dbContext = dbContext;
+            DbContext = dbContext;
+            Mapper = mapper;
         }
 
         public async Task<IGameInfoPlayerCountTag> GetByIDAsync(int gameInfoPlayerCountTagID)
         {
-            return await _dbContext.GameInfoPlayerCountTags.FindAsync(gameInfoPlayerCountTagID);
+            return Mapper.Map<GameInfoPlayerCountTag>(await DbContext.GameInfoPlayerCountTagEntities.AsNoTracking().SingleOrDefaultAsync(x => x.ID == gameInfoPlayerCountTagID));
         }
 
         public async Task<IEnumerable<IGameInfoPlayerCountTag>> GetListAsync()
         {
-            return await _dbContext.GameInfoPlayerCountTags.ToListAsync();
+            return Mapper.Map<List<GameInfoPlayerCountTag>>(await DbContext.GameInfoPlayerCountTagEntities.ToListAsync());
         }
 
         public async Task<IGameInfoPlayerCountTag> InsertAsync(IGameInfoPlayerCountTag entityToInsert)
         {
-            _dbContext.Set<GameInfoPlayerCountTag>().Add((GameInfoPlayerCountTag)entityToInsert);
-            await SaveChangesAsync();
+            var entry = DbContext.GameInfoPlayerCountTagEntities.Add(Mapper.Map<GameInfoPlayerCountTagEntity>(entityToInsert));
 
-            return entityToInsert;
+            await SaveChangesAsync();
+            return Mapper.Map<GameInfoPlayerCountTag>(entry);
         }
 
         public async Task<IGameInfoPlayerCountTag> UpdateAsync(IGameInfoPlayerCountTag entityToUpdate)
         {
-            _dbContext.Entry(entityToUpdate).State = EntityState.Modified;
-            await SaveChangesAsync();
+            var entity = Mapper.Map<GameInfoPlayerCountTagEntity>(entityToUpdate);
 
-            return entityToUpdate;
+            var entry = DbContext.Set<GameInfoPlayerCountTagEntity>().Attach(entity);
+            DbContext.Entry(entity).State = EntityState.Modified;
+
+            await SaveChangesAsync();
+            return Mapper.Map<GameInfoPlayerCountTag>(entry);
         }
 
         public async Task<bool> DeleteAsync(int entityKey)
         {
-            var entity = await GetByIDAsync(entityKey);
+            var entity = await DbContext.GameInfoPlayerCountTagEntities.FindAsync(entityKey);
 
             if (entity != null)
             {
-                _dbContext.Set<GameInfoPlayerCountTag>().Remove((GameInfoPlayerCountTag)entity);
+                DbContext.Set<GameInfoPlayerCountTagEntity>().Attach(entity);
+                DbContext.Entry(entity).State = EntityState.Deleted;
                 await SaveChangesAsync();
 
                 return true;
@@ -64,7 +71,7 @@ namespace MonoProject.Repository
 
         public async Task<int> SaveChangesAsync()
         {
-            return await _dbContext.SaveChangesAsync();
+            return await DbContext.SaveChangesAsync();
         }
     }
 }

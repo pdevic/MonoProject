@@ -14,17 +14,19 @@ using Autofac.Integration.Mvc;
 using Autofac.Integration.WebApi;
 
 using AutoMapper;
-using AutoMapper.Contrib.Autofac.DependencyInjection;
+
 using MonoProject.Common;
 using MonoProject.Model;
 using MonoProject.Repository;
 using MonoProject.Service;
 
+using static MonoProject.WebAPI.Controllers.GamesController;
+
 namespace MonoProject.WebAPI
 {
     public class WebApiApplication : System.Web.HttpApplication
     {
-        public static IContainer container { get; set; }
+        public static IContainer Container { get; set; }
 
         protected void Application_Start()
         {
@@ -34,11 +36,18 @@ namespace MonoProject.WebAPI
             builder.RegisterModule<ModelBinds>();
             builder.RegisterModule<RepositoryBinds>();
             builder.RegisterModule<ServiceBinds>();
-            builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
-            builder.AddAutoMapper(Assembly.GetExecutingAssembly());
 
-            container = builder.Build();
-            config.DependencyResolver = new AutofacWebApiDependencyResolver(container);
+            builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
+
+            builder.Register(ctx => new MapperConfiguration(cfg => {
+                cfg.AddProfile(new MonoProject.Repository.MappingProfiles());
+                cfg.CreateMap<GameInfo, GameInfoRestBasic>().ReverseMap();
+            }));
+
+            builder.Register(ctx => ctx.Resolve<MapperConfiguration>().CreateMapper()).As<IMapper>().InstancePerLifetimeScope();
+
+            Container = builder.Build();
+            config.DependencyResolver = new AutofacWebApiDependencyResolver(Container);
 
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);

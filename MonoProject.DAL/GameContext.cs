@@ -13,20 +13,10 @@ namespace MonoProject.DAL
             
         }
 
-        public DbSet<GameInfo> GameInfos { get; set; }
-        public DbSet<PlayerCountTag> PlayerCountTags { get; set; }
+        public DbSet<GameInfoEntity> GameInfoEntities { get; set; }
+        public DbSet<PlayerCountTagEntity> PlayerCountTagEntities { get; set; }
 
-        public DbSet<GameInfoPlayerCountTag> GameInfoPlayerCountTags { get; set; }
-
-        /*protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            Database.SetInitializer<GameContext>(null);
-            base.OnModelCreating(modelBuilder);
-
-            modelBuilder.Entity<GameInfo>().ToTable("GameInfo");
-            modelBuilder.Entity<PlayerCountTag>().ToTable("PlayerCountTag");
-            modelBuilder.Entity<GameInfoPlayerCountTag>().ToTable("GameInfoPlayerCountTag");
-        }*/
+        public DbSet<GameInfoPlayerCountTagEntity> GameInfoPlayerCountTagEntities { get; set; }
 
     }
 

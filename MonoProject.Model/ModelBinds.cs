@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Autofac;
-//using AutoMapper;
 
 using MonoProject.Model.Common;
 

@@ -259,7 +259,6 @@ C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Common\bin\Debug\Sy
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Common\bin\Debug\Autofac.pdb
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Common\bin\Debug\Autofac.xml
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Common\bin\Debug\Autofac.Integration.Mvc.xml
-C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Common\bin\Debug\AutoMapper.pdb
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Common\bin\Debug\AutoMapper.xml
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Common\bin\Debug\EntityFramework.xml
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Common\bin\Debug\EntityFramework.SqlServer.xml
@@ -273,8 +272,8 @@ C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Common\bin\Debug\Sy
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Common\bin\Debug\System.Web.WebPages.xml
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Common\bin\Debug\System.Web.WebPages.Deployment.xml
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Common\bin\Debug\System.Web.WebPages.Razor.xml
-C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Common\obj\Debug\MonoProject.Common.csprojAssemblyReference.cache
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Common\obj\Debug\MonoProject.Common.csproj.CoreCompileInputs.cache
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Common\obj\Debug\MonoProject.Common.csproj.CopyComplete
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Common\obj\Debug\MonoProject.Common.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Common\obj\Debug\MonoProject.Common.pdb
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Common\obj\Debug\MonoProject.Common.csprojAssemblyReference.cache
