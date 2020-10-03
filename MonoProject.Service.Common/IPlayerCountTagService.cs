@@ -10,6 +10,5 @@ namespace MonoProject.Service.Common
 {
     public interface IPlayerCountTagService : IRepositoryService<IPlayerCountTag, int>
     {
-        Task<IEnumerable<IPlayerCountTag>> GetListAsync();
     }
 }

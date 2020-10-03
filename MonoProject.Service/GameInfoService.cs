@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using MonoProject.Common;
 using MonoProject.Model.Common;
 using MonoProject.Repository.Common;
 using MonoProject.Service.Common;
@@ -39,10 +40,14 @@ namespace MonoProject.Service
         {
             Repository = _repository;
         }
-
-        public async Task<IEnumerable<IGameInfo>> GetListAsync()
+        public async Task<int> GetAllCountAsync()
         {
-            return await Repository.GetListAsync();
+            return await Repository.GetAllCountAsync();
+        }
+
+        public async Task<IEnumerable<IGameInfo>> GetListAsync(PagingParameterModel pagingParameterModel, SortingParameterModel sortingParameterModel)
+        {
+            return await Repository.GetListAsync(pagingParameterModel, sortingParameterModel);
         }
 
         public async Task<IGameInfo> GetByIDAsync(int entityKey)

@@ -301,3 +301,6 @@ C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\obj\Debu
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\obj\Debug\MonoProject.Repository.csproj.CopyComplete
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\obj\Debug\MonoProject.Repository.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\obj\Debug\MonoProject.Repository.pdb
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\bin\Debug\MonoProject.Common.dll
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\bin\Debug\MonoProject.Common.pdb
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\bin\Debug\MonoProject.Common.dll.config

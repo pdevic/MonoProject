@@ -100,6 +100,10 @@
     <Compile Include="RepositoryBinds.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MonoProject.Common\MonoProject.Common.csproj">
+      <Project>{B8F07712-AB77-431E-948B-893AB911D9F4}</Project>
+      <Name>MonoProject.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MonoProject.DAL\MonoProject.DAL.csproj">
       <Project>{fd10438e-127a-416f-8445-059d458b1c6d}</Project>
       <Name>MonoProject.DAL</Name>

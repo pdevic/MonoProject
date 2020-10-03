@@ -296,3 +296,11 @@ C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\obj\Debug\Mo
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\obj\Debug\MonoProject.WebAPI.csproj.CopyComplete
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\obj\Debug\MonoProject.WebAPI.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\obj\Debug\MonoProject.WebAPI.pdb
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\System.Text.Encodings.Web.dll
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\System.Text.Json.dll
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\System.ValueTuple.dll
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\System.Text.Encodings.Web.xml
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\System.Text.Json.xml
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\System.ValueTuple.xml
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\x86\sqlite3.dll
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\x64\sqlite3.dll

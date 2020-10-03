@@ -4,13 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using MonoProject.Common;
 using MonoProject.Model.Common;
 
 namespace MonoProject.Service.Common
 {
     public interface IGameInfoService : IRepositoryService<IGameInfo, int>
     {
-        Task<IEnumerable<IGameInfo>> GetListAsync();
-        //Task<int> SaveChangesAsync();
     }
 }

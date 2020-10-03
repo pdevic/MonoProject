@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using MonoProject.Common;
 using MonoProject.Model.Common;
 using MonoProject.Repository.Common;
 using MonoProject.Service.Common;
@@ -12,21 +13,25 @@ namespace MonoProject.Service
 {
     public class GameInfoPlayerCountTagService : IGameInforPlayerCountTagService
     {
-        private readonly IGameInfoPlayerCountTagRepository repository;
+        private readonly IGameInfoPlayerCountTagRepository Repository;
 
         public GameInfoPlayerCountTagService(IGameInfoPlayerCountTagRepository _repository)
         {
-            repository = _repository;
+            Repository = _repository;
         }
 
-        public async Task<IEnumerable<IGameInfoPlayerCountTag>> GetListAsync()
+        public async Task<int> GetAllCountAsync()
         {
-            return await repository.GetListAsync();
+            return await Repository.GetAllCountAsync();
+        }
+        public async Task<IEnumerable<IGameInfoPlayerCountTag>> GetListAsync(PagingParameterModel pagingParameterModel, SortingParameterModel sortingParameterModel)
+        {
+            return await Repository.GetListAsync(pagingParameterModel, sortingParameterModel);
         }
 
         public async Task<IGameInfoPlayerCountTag> GetByIDAsync(int entityKey)
         {
-            return await repository.GetByIDAsync(entityKey);
+            return await Repository.GetByIDAsync(entityKey);
         }
 
         public async Task<IGameInfoPlayerCountTag> InsertAsync(IGameInfoPlayerCountTag entityToInsert)
@@ -36,22 +41,23 @@ namespace MonoProject.Service
             entityToInsert.DateUpdated = System.DateTime.Now;
             entityToInsert.TimeStamp = System.DateTime.Now;
 
-            return await repository.InsertAsync(entityToInsert);
+            return await Repository.InsertAsync(entityToInsert);
         }
 
         public async Task<IGameInfoPlayerCountTag> UpdateAsync(IGameInfoPlayerCountTag entityToUpdate)
         {
-            var entry = await repository.GetByIDAsync(entityToUpdate.ID);
+            var entry = await Repository.GetByIDAsync(entityToUpdate.ID);
 
             entry.GameInfoID = entityToUpdate.GameInfoID;
             entry.PlayerCountTagID = entityToUpdate.PlayerCountTagID;
 
-            return await repository.UpdateAsync(entry);
+            return await Repository.UpdateAsync(entry);
         }
 
         public async Task<bool> DeleteAsync(int entityKey)
         {
-            return await repository.DeleteAsync(entityKey);
+            return await Repository.DeleteAsync(entityKey);
         }
+
     }
 }

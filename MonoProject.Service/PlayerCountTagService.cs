@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using MonoProject.Common;
 using MonoProject.Model.Common;
 using MonoProject.Repository.Common;
 using MonoProject.Service.Common;
@@ -12,8 +13,12 @@ namespace MonoProject.Service
 {
     public class PlayerCountTagService : IPlayerCountTagService
     {
-        private readonly IPlayerCountTagRepository repository;
+        private readonly IPlayerCountTagRepository Repository;
 
+        public async Task<int> GetAllCountAsync()
+        {
+            return await Repository.GetAllCountAsync();
+        }
         public async static Task<bool> ValidatePlayerCountTagName(string name)
         {
             var task = Task.Run(() =>
@@ -35,17 +40,17 @@ namespace MonoProject.Service
 
         public PlayerCountTagService(IPlayerCountTagRepository _repository)
         {
-            repository = _repository;
+            Repository = _repository;
         }
 
-        public async Task<IEnumerable<IPlayerCountTag>> GetListAsync()
+        public async Task<IEnumerable<IPlayerCountTag>> GetListAsync(PagingParameterModel pagingParameterModel, SortingParameterModel sortingParameterModel)
         {
-            return await repository.GetListAsync();
+            return await Repository.GetListAsync(pagingParameterModel, sortingParameterModel);
         }
 
         public async Task<IPlayerCountTag> GetByIDAsync(int entityKey)
         {
-            return await repository.GetByIDAsync(entityKey);
+            return await Repository.GetByIDAsync(entityKey);
         }
 
         public async Task<IPlayerCountTag> InsertAsync(IPlayerCountTag entityToInsert)
@@ -65,7 +70,7 @@ namespace MonoProject.Service
             entityToInsert.DateUpdated = System.DateTime.Now;
             entityToInsert.TimeStamp = System.DateTime.Now;
 
-            return await repository.InsertAsync(entityToInsert);
+            return await Repository.InsertAsync(entityToInsert);
         }
 
         public async Task<IPlayerCountTag> UpdateAsync(IPlayerCountTag entityToUpdate)
@@ -80,16 +85,16 @@ namespace MonoProject.Service
                 throw new Exception("PlayerCountTagService failed to update a PlayerCountTag instance");
             }
 
-            var entry = await repository.GetByIDAsync(entityToUpdate.ID);
+            var entry = await Repository.GetByIDAsync(entityToUpdate.ID);
             entry.Name = entityToUpdate.Name;
             entry.DateUpdated = System.DateTime.Now;
 
-            return await repository.UpdateAsync(entry);
+            return await Repository.UpdateAsync(entry);
         }
 
         public async Task<bool> DeleteAsync(int entityKey)
         {
-            return await repository.DeleteAsync(entityKey);
+            return await Repository.DeleteAsync(entityKey);
         }
 
     }

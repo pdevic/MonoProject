@@ -95,7 +95,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common.cs" />
+    <Compile Include="PagingParameterModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SortingParameterModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

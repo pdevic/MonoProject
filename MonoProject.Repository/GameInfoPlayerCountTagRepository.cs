@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 using AutoMapper;
 
+using MonoProject.Common;
 using MonoProject.DAL;
 using MonoProject.Model;
 using MonoProject.Model.Common;
@@ -24,12 +25,16 @@ namespace MonoProject.Repository
             Mapper = mapper;
         }
 
+        public async Task<int> GetAllCountAsync()
+        {
+            return Mapper.Map<List<GameInfoPlayerCountTag>>(await DbContext.GameInfoPlayerCountTagEntities.ToListAsync()).Count();
+        }
         public async Task<IGameInfoPlayerCountTag> GetByIDAsync(int gameInfoPlayerCountTagID)
         {
             return Mapper.Map<GameInfoPlayerCountTag>(await DbContext.GameInfoPlayerCountTagEntities.AsNoTracking().SingleOrDefaultAsync(x => x.ID == gameInfoPlayerCountTagID));
         }
 
-        public async Task<IEnumerable<IGameInfoPlayerCountTag>> GetListAsync()
+        public async Task<IEnumerable<IGameInfoPlayerCountTag>> GetListAsync(PagingParameterModel pagingParameterModel, SortingParameterModel sortingParameterModel)
         {
             return Mapper.Map<List<GameInfoPlayerCountTag>>(await DbContext.GameInfoPlayerCountTagEntities.ToListAsync());
         }

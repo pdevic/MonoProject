@@ -7,10 +7,18 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
+using System.Text.Json;
+using System.Text.Json.Serialization;
+
 using HttpGetAttribute = System.Web.Http.HttpGetAttribute;
 using AutoMapper;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+
+using MonoProject.Common;
+using System.Web.Helpers;
+using System.Web;
+using Newtonsoft.Json;
 
 namespace MonoProject.WebAPI.Controllers
 {
@@ -40,9 +48,43 @@ namespace MonoProject.WebAPI.Controllers
 
         [HttpGet]
         [Route("index")]
-        public async Task<HttpResponseMessage> Index()
+        public async Task<HttpResponseMessage> Index([FromUri] PagingParameterModel pagingParameterModel, [FromUri] SortingParameterModel sortingParameterModel)
         {
-            return Request.CreateResponse(HttpStatusCode.OK, Mapper.Map<List<GameInfoRestBasic>>(await GameInfoService.GetListAsync()));
+            if (pagingParameterModel == null)
+            {
+                pagingParameterModel = new PagingParameterModel();    
+            }
+
+            if (sortingParameterModel == null)
+            {
+                sortingParameterModel = new SortingParameterModel();
+            }
+
+            if (!SortingParameterModel.OrderByOptions.Contains(sortingParameterModel.OrderBy))
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Unknown sorting parameter " + sortingParameterModel.OrderBy);
+            }
+
+            if (!SortingParameterModel.SortingOrderOptions.Contains(sortingParameterModel.SortingOrder))
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Unknown sorting order parameter " + sortingParameterModel.SortingOrder);
+            }
+
+            var res = Mapper.Map<List<GameInfoRestBasic>>(await GameInfoService.GetListAsync(pagingParameterModel, sortingParameterModel));
+            var totalItemsCount = await GameInfoService.GetAllCountAsync();
+
+            var pagingMetadata = new
+            {
+                TotalItemsCount = totalItemsCount,
+                CurrentPage = pagingParameterModel.PageNumber,
+                PageSize = pagingParameterModel.PageSize,
+                TotalPages = (int)Math.Ceiling(totalItemsCount / (double)pagingParameterModel.PageSize)
+            };
+
+            HttpContext.Current.Response.Headers.Add("Paging-Headers", JsonConvert.SerializeObject(pagingMetadata));
+            HttpContext.Current.Response.Headers.Add("Sorting-Headers", JsonConvert.SerializeObject(sortingParameterModel));
+
+            return Request.CreateResponse(HttpStatusCode.OK, res);
         }
 
         [HttpGet]

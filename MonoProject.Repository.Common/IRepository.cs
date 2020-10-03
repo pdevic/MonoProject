@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using MonoProject.Common;
+
 namespace MonoProject.Repository.Common
 {
     public interface IRepository<TEntity, in TKey> where TEntity : class
@@ -13,7 +15,8 @@ namespace MonoProject.Repository.Common
 
         //TEntity GetByID(TKey entityKey);
         Task<TEntity> GetByIDAsync(TKey entityKey);
-        Task<IEnumerable<TEntity>> GetListAsync();
+        Task<int> GetAllCountAsync();
+        Task<IEnumerable<TEntity>> GetListAsync(PagingParameterModel pagingParameterModel, SortingParameterModel sortingParameterModel);
 
         Task<TEntity> InsertAsync(TEntity entityToInsert);
         Task<TEntity> UpdateAsync(TEntity entityToUpdate);
