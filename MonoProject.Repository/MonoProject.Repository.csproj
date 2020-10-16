@@ -92,10 +92,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GameInfoPlayerCountTagRepository.cs" />
+    <Compile Include="BaseRepository.cs" />
+    <Compile Include="GameInfoGenreTagRepository.cs" />
     <Compile Include="MappingProfiles.cs" />
     <Compile Include="GameInfoRepository.cs" />
-    <Compile Include="PlayerCountTagRepository.cs" />
+    <Compile Include="GenreTagRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositoryBinds.cs" />
   </ItemGroup>
@@ -119,6 +120,10 @@
     <ProjectReference Include="..\MonoProject.Repository.Common\MonoProject.Repository.Common.csproj">
       <Project>{cb4db3d8-3375-4ed0-a0d8-60c7126f0a95}</Project>
       <Name>MonoProject.Repository.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MonoProject.Service.Common\MonoProject.Service.Common.csproj">
+      <Project>{FA696201-FC57-406E-9BFD-CF31D5B17D61}</Project>
+      <Name>MonoProject.Service.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -17,5 +17,6 @@ namespace MonoProject.Service.Common
         Task<TEntity> InsertAsync(TEntity entityToInsert);
         Task<TEntity> UpdateAsync(TEntity entityToUpdate);
         Task<bool> DeleteAsync(TKey entityKey);
+        void FillCurrentTime(TEntity entity);
     }
 }

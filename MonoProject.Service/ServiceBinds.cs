@@ -17,8 +17,8 @@ namespace MonoProject.Service
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterType<GameInfoService>().As<IGameInfoService>();
-            builder.RegisterType<PlayerCountTagService>().As<IPlayerCountTagService>();
-            builder.RegisterType<GameInfoPlayerCountTagService>().As<IGameInforPlayerCountTagService>();
+            builder.RegisterType<GenreTagService>().As<IGenreTagService>();
+            builder.RegisterType<GameInfoGenreTagService>().As<IGameInforGenreTagService>();
         }
     }
 }

@@ -8,16 +8,12 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MonoProject.Model.Common
 {
-    public interface IGameInfoPlayerCountTag : IPoco
+    public interface IGameInfoGenreTag : IPoco
     {
-        //[Required]
+        [Required]
         int GameInfoID { get; set; }
 
-        //[Required]
-        int PlayerCountTagID { get; set; }
-
-        //IGameInfo GameInfo { get; set; }
-
-        //IPlayerCountTag PlayerCountTag { get; set; }
+        [Required]
+        int GenreTagID { get; set; }
     }
 }

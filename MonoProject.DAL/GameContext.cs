@@ -14,9 +14,9 @@ namespace MonoProject.DAL
         }
 
         public DbSet<GameInfoEntity> GameInfoEntities { get; set; }
-        public DbSet<PlayerCountTagEntity> PlayerCountTagEntities { get; set; }
+        public DbSet<GenreTagEntity> GenreTagEntities { get; set; }
 
-        public DbSet<GameInfoPlayerCountTagEntity> GameInfoPlayerCountTagEntities { get; set; }
+        public DbSet<GameInfoGenreTagEntity> GameInfoGenreTagEntities { get; set; }
 
     }
 

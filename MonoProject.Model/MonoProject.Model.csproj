@@ -93,9 +93,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GameInfo.cs" />
-    <Compile Include="GameInfoPlayerCountTag.cs" />
+    <Compile Include="GameInfoGenreTag.cs" />
     <Compile Include="ModelBinds.cs" />
-    <Compile Include="PlayerCountTag.cs" />
+    <Compile Include="GenreTag.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

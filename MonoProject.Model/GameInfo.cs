@@ -15,7 +15,7 @@ namespace MonoProject.Model
     {
         [ScaffoldColumn(false)] public int ID { get; set; }
 
-        [Required, StringLength(50), Display(Name = "Game name")] public string Name { get; set; }
+        [Required, StringLength(50)] public string Name { get; set; }
         public string Description { get; set; }
         public DateTime ReleaseDate { get; set; }
 

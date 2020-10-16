@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 using MonoProject.Model.Common;
 
-namespace MonoProject.Repository.Common
+namespace MonoProject.Service.Common
 {
-    public interface IPlayerCountTagRepository : IRepository<IPlayerCountTag, int>
+    public interface IGenreTagService : IRepositoryService<IGenreTag, int>
     {
+        Task<IGenreTag> GetByNameAsync(string tagName);
     }
 }

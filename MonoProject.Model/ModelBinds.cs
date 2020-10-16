@@ -15,8 +15,8 @@ namespace MonoProject.Model
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterType<GameInfo>().As<IGameInfo>();
-            builder.RegisterType<PlayerCountTag>().As<IPlayerCountTag>();
-            builder.RegisterType<GameInfoPlayerCountTag>().As<IGameInfoPlayerCountTag>();
+            builder.RegisterType<GenreTag>().As<IGenreTag>();
+            builder.RegisterType<GameInfoGenreTag>().As<IGameInfoGenreTag>();
         }
     }
 }

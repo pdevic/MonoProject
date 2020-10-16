@@ -9,12 +9,11 @@ using MonoProject.Model.Common;
 
 namespace MonoProject.DAL
 {
-    public class GameInfoPlayerCountTagEntity : IPoco
+    public class GenreTagEntity : IPoco
     {
         [ScaffoldColumn(false)] public int ID { get; set; }
 
-        public int GameInfoID { get; set; }
-        public int PlayerCountTagID { get; set; }
+        [Required, StringLength(30)] public string Name { get; set; }
 
         [Required] public DateTime DateCreated { get; set; }
         [Required] public DateTime DateUpdated { get; set; }

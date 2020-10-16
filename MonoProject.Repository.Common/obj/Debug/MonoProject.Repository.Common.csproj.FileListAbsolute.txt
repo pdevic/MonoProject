@@ -248,6 +248,7 @@ C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository.Common\b
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository.Common\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository.Common\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository.Common\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository.Common\bin\Debug\MonoProject.Common.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository.Common\bin\Debug\MonoProject.Model.Common.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository.Common\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository.Common\bin\Debug\System.Threading.Tasks.Extensions.dll
@@ -257,6 +258,8 @@ C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository.Common\b
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository.Common\bin\Debug\System.Web.WebPages.Deployment.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository.Common\bin\Debug\System.Web.WebPages.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository.Common\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository.Common\bin\Debug\MonoProject.Common.pdb
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository.Common\bin\Debug\MonoProject.Common.dll.config
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository.Common\bin\Debug\MonoProject.Model.Common.pdb
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository.Common\bin\Debug\MonoProject.Model.Common.dll.config
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository.Common\bin\Debug\Autofac.pdb
@@ -279,6 +282,3 @@ C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository.Common\o
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository.Common\obj\Debug\MonoProject.Repository.Common.csproj.CopyComplete
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository.Common\obj\Debug\MonoProject.Repository.Common.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository.Common\obj\Debug\MonoProject.Repository.Common.pdb
-C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository.Common\bin\Debug\MonoProject.Common.dll
-C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository.Common\bin\Debug\MonoProject.Common.pdb
-C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository.Common\bin\Debug\MonoProject.Common.dll.config

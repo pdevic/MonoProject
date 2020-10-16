@@ -250,6 +250,7 @@ C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service.Common\bin\
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service.Common\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service.Common\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service.Common\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service.Common\bin\Debug\MonoProject.Common.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service.Common\bin\Debug\MonoProject.Model.Common.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service.Common\bin\Debug\MonoProject.Repository.Common.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service.Common\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
@@ -260,6 +261,8 @@ C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service.Common\bin\
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service.Common\bin\Debug\System.Web.WebPages.Deployment.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service.Common\bin\Debug\System.Web.WebPages.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service.Common\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service.Common\bin\Debug\MonoProject.Common.pdb
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service.Common\bin\Debug\MonoProject.Common.dll.config
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service.Common\bin\Debug\MonoProject.Model.Common.pdb
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service.Common\bin\Debug\MonoProject.Model.Common.dll.config
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service.Common\bin\Debug\MonoProject.Repository.Common.pdb
@@ -284,6 +287,3 @@ C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service.Common\obj\
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service.Common\obj\Debug\MonoProject.Service.Common.csproj.CopyComplete
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service.Common\obj\Debug\MonoProject.Service.Common.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service.Common\obj\Debug\MonoProject.Service.Common.pdb
-C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service.Common\bin\Debug\MonoProject.Common.dll
-C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service.Common\bin\Debug\MonoProject.Common.pdb
-C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service.Common\bin\Debug\MonoProject.Common.dll.config

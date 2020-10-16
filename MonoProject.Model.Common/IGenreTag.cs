@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MonoProject.Model.Common
 {
-    public interface IPlayerCountTag : IPoco
+    public interface IGenreTag : IPoco
     {
         [Required, StringLength(30)] string Name { get; set; }
 

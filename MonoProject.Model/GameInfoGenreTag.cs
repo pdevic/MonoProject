@@ -1,19 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 using MonoProject.Model.Common;
 
-namespace MonoProject.DAL
+namespace MonoProject.Model
 {
-    public class PlayerCountTagEntity : IPoco
+    public class GameInfoGenreTag : IPoco, IGameInfoGenreTag
     {
         [ScaffoldColumn(false)] public int ID { get; set; }
 
-        [Required, StringLength(30)] public string Name { get; set; }
+        public int GameInfoID { get; set; }
+        public int GenreTagID { get; set; }
 
         [Required] public DateTime DateCreated { get; set; }
         [Required] public DateTime DateUpdated { get; set; }

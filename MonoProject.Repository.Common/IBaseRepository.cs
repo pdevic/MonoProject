@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 using MonoProject.Model.Common;
 
-namespace MonoProject.Service.Common
+namespace MonoProject.Repository.Common
 {
-    public interface IGameInforPlayerCountTagService : IRepositoryService<IGameInfoPlayerCountTag, int>
+    public interface IBaseRepository<TInterface> : IRepository<TInterface, int>
+        where TInterface : class
     {
+
     }
 }

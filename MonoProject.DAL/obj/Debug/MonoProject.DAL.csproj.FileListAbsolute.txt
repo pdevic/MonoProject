@@ -373,5 +373,5 @@ C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.DAL\obj\Debug\MonoP
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.DAL\obj\Debug\MonoProject.DAL.csproj.CopyComplete
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.DAL\obj\Debug\MonoProject.DAL.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.DAL\obj\Debug\MonoProject.DAL.pdb
-C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.DAL\obj\Debug\MonoProject.DAL.Migrations.Initial.resources
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.DAL\obj\Debug\MonoProject.DAL.Migrations.init.resources
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.DAL\obj\Debug\MonoProject.DAL.csproj.GenerateResource.cache

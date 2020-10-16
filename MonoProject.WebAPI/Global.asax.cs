@@ -21,6 +21,7 @@ using MonoProject.Repository;
 using MonoProject.Service;
 
 using static MonoProject.WebAPI.Controllers.GamesController;
+using static MonoProject.WebAPI.Controllers.TagsController;
 
 namespace MonoProject.WebAPI
 {
@@ -42,6 +43,7 @@ namespace MonoProject.WebAPI
             builder.Register(ctx => new MapperConfiguration(cfg => {
                 cfg.AddProfile(new MonoProject.Repository.MappingProfiles());
                 cfg.CreateMap<GameInfo, GameInfoRestBasic>().ReverseMap();
+                cfg.CreateMap<GenreTag, GenreTagRestBasic>().ReverseMap();
             }));
 
             builder.Register(ctx => ctx.Resolve<MapperConfiguration>().CreateMapper()).As<IMapper>().InstancePerLifetimeScope();

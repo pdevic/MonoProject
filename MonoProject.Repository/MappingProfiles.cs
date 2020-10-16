@@ -16,8 +16,8 @@ namespace MonoProject.Repository
 		public MappingProfiles()
 		{
 			CreateMap<GameInfo,				  GameInfoEntity			    >().ReverseMap();
-			CreateMap<PlayerCountTag,		  PlayerCountTagEntity		>().ReverseMap();
-			CreateMap<GameInfoPlayerCountTag, GameInfoPlayerCountTagEntity>().ReverseMap();
+			CreateMap<GenreTag,		  GenreTagEntity		>().ReverseMap();
+			CreateMap<GameInfoGenreTag, GameInfoGenreTagEntity>().ReverseMap();
 		}
 	}
 }

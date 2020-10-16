@@ -9,6 +9,19 @@ namespace MonoProject.Common
     public class Common
     {
         public const int gameInfoMaxNameLength = 50;
-        public const int playerCountTagMaxNameLength = 20;
+        public const int genreTagMaxNameLength = 20;
+
+        public static void FillEmptyParameters(PagingParameterModel pagingParameterModel, SortingParameterModel sortingParameterModel)
+        {
+            if (pagingParameterModel == null)
+            {
+                pagingParameterModel = new PagingParameterModel();
+            }
+
+            if (sortingParameterModel == null)
+            {
+                sortingParameterModel = new SortingParameterModel();
+            }
+        }
     }
 }

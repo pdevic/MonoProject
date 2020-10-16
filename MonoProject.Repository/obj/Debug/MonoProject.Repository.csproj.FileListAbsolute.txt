@@ -261,10 +261,12 @@ C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\bin\Debu
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\bin\Debug\MonoProject.Common.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\bin\Debug\MonoProject.DAL.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\bin\Debug\MonoProject.Model.Common.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\bin\Debug\MonoProject.Model.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\bin\Debug\MonoProject.Repository.Common.dll
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\bin\Debug\MonoProject.Service.Common.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\bin\Debug\System.Threading.Tasks.Extensions.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\bin\Debug\System.Web.Helpers.dll
@@ -273,6 +275,8 @@ C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\bin\Debu
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\bin\Debug\System.Web.WebPages.Deployment.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\bin\Debug\System.Web.WebPages.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\bin\Debug\MonoProject.Common.pdb
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\bin\Debug\MonoProject.Common.dll.config
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\bin\Debug\MonoProject.DAL.pdb
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\bin\Debug\MonoProject.DAL.dll.config
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\bin\Debug\MonoProject.Model.Common.pdb
@@ -281,6 +285,8 @@ C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\bin\Debu
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\bin\Debug\MonoProject.Model.dll.config
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\bin\Debug\MonoProject.Repository.Common.pdb
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\bin\Debug\MonoProject.Repository.Common.dll.config
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\bin\Debug\MonoProject.Service.Common.pdb
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\bin\Debug\MonoProject.Service.Common.dll.config
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\bin\Debug\Autofac.pdb
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\bin\Debug\Autofac.xml
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\bin\Debug\Autofac.Integration.Mvc.xml
@@ -301,6 +307,3 @@ C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\obj\Debu
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\obj\Debug\MonoProject.Repository.csproj.CopyComplete
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\obj\Debug\MonoProject.Repository.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\obj\Debug\MonoProject.Repository.pdb
-C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\bin\Debug\MonoProject.Common.dll
-C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\bin\Debug\MonoProject.Common.pdb
-C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Repository\bin\Debug\MonoProject.Common.dll.config

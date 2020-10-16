@@ -91,8 +91,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GameInfoPlayerCountTagService.cs" />
-    <Compile Include="PlayerCountTagService.cs" />
+    <Compile Include="GameInfoGenreTagService.cs" />
+    <Compile Include="GenericService.cs" />
+    <Compile Include="GenreTagService.cs" />
     <Compile Include="GameInfoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceBinds.cs" />

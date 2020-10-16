@@ -91,9 +91,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IGameInfoPlayerCountTagRepository.cs" />
+    <Compile Include="IGameInfoGenreTagRepository.cs" />
+    <Compile Include="IBaseRepository.cs" />
     <Compile Include="IGameInfoRepository.cs" />
-    <Compile Include="IPlayerCountTagRepository.cs" />
+    <Compile Include="IGenreTagRepository.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

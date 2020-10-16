@@ -142,6 +142,8 @@ C:\Users\Jupiter\Desktop\MonoProject\MonoProject.WebAPI\obj\Debug\MonoProject.We
 C:\Users\Jupiter\Desktop\MonoProject\MonoProject.WebAPI\obj\Debug\MonoProject.WebAPI.csproj.CopyComplete
 C:\Users\Jupiter\Desktop\MonoProject\MonoProject.WebAPI\obj\Debug\MonoProject.WebAPI.dll
 C:\Users\Jupiter\Desktop\MonoProject\MonoProject.WebAPI\obj\Debug\MonoProject.WebAPI.pdb
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\obj\Debug\MonoProject.WebAPI.csprojAssemblyReference.cache
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\obj\Debug\MonoProject.WebAPI.csproj.CoreCompileInputs.cache
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\MonoProject.WebAPI.dll.config
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\MonoProject.WebAPI.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\MonoProject.WebAPI.pdb
@@ -225,7 +227,10 @@ C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\System.M
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\System.Net.Http.Formatting.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\System.Numerics.Vectors.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\System.Text.Encodings.Web.dll
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\System.Text.Json.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\System.Threading.Tasks.Extensions.dll
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\System.ValueTuple.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\System.Web.Helpers.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\System.Web.Http.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\System.Web.Http.WebHost.dll
@@ -273,7 +278,10 @@ C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\System.B
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\System.Memory.xml
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\System.Numerics.Vectors.xml
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\System.Text.Encodings.Web.xml
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\System.Text.Json.xml
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\System.Threading.Tasks.Extensions.xml
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\System.ValueTuple.xml
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\System.Net.Http.Formatting.xml
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\System.Web.Helpers.xml
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\System.Web.Http.xml
@@ -291,16 +299,6 @@ C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\MonoProj
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\MonoProject.DAL.pdb
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\MonoProject.DAL.dll.config
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\ru-ru\JavaScriptEngineSwitcher.Core.resources.dll
-C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\obj\Debug\MonoProject.WebAPI.csprojAssemblyReference.cache
-C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\obj\Debug\MonoProject.WebAPI.csproj.CoreCompileInputs.cache
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\obj\Debug\MonoProject.WebAPI.csproj.CopyComplete
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\obj\Debug\MonoProject.WebAPI.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\obj\Debug\MonoProject.WebAPI.pdb
-C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\System.Text.Encodings.Web.dll
-C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\System.Text.Json.dll
-C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\System.ValueTuple.dll
-C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\System.Text.Encodings.Web.xml
-C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\System.Text.Json.xml
-C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\System.ValueTuple.xml
-C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\x86\sqlite3.dll
-C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\x64\sqlite3.dll

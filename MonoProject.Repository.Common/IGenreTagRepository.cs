@@ -8,7 +8,8 @@ using MonoProject.Model.Common;
 
 namespace MonoProject.Repository.Common
 {
-    public interface IGameInfoPlayerCountTagRepository : IRepository<IGameInfoPlayerCountTag, int>
+    public interface IGenreTagRepository : IBaseRepository<IGenreTag>
     {
+        Task<IGenreTag> GetByNameAsync(string tagName);
     }
 }
