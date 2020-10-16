@@ -11,7 +11,7 @@ namespace MonoProject.Common
         public const int gameInfoMaxNameLength = 50;
         public const int genreTagMaxNameLength = 20;
 
-        public static void FillEmptyParameters(PagingParameterModel pagingParameterModel, SortingParameterModel sortingParameterModel)
+        public static void FillEmptyParameters(PagingParameterModel pagingParameterModel, SortingParameterModel sortingParameterModel, SearchParameters searchParameters)
         {
             if (pagingParameterModel == null)
             {
@@ -21,6 +21,23 @@ namespace MonoProject.Common
             if (sortingParameterModel == null)
             {
                 sortingParameterModel = new SortingParameterModel();
+            }
+
+            if (searchParameters == null)
+            {
+                searchParameters = new SearchParameters();
+            }
+
+
+
+            if (searchParameters.NameQuery == null)
+            {
+                searchParameters.NameQuery = "";
+            }
+
+            if (searchParameters.TagsQuery == null)
+            {
+                searchParameters.TagsQuery = "";
             }
         }
     }

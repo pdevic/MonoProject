@@ -57,10 +57,11 @@ namespace MonoProject.WebAPI.Controllers
 
         [HttpGet]
         [Route("index")]
-        public async Task<HttpResponseMessage> IndexAsync([FromUri] PagingParameterModel pagingParameterModel, [FromUri] SortingParameterModel sortingParameterModel)
+        public async Task<HttpResponseMessage> IndexAsync([FromUri] PagingParameterModel pagingParameterModel, [FromUri] SortingParameterModel sortingParameterModel, [FromUri] SearchParameters searchParameters)
         {
-            Common.Common.FillEmptyParameters(pagingParameterModel, sortingParameterModel);
+            Common.Common.FillEmptyParameters(pagingParameterModel, sortingParameterModel, searchParameters);
 
+            // ============================================== Check if the order and search parameters are valid ==============================================
             if (!SortingParameterModel.OrderByOptions.Contains(sortingParameterModel.OrderBy))
             {
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Unknown sorting parameter " + sortingParameterModel.OrderBy);
@@ -71,20 +72,32 @@ namespace MonoProject.WebAPI.Controllers
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Unknown sorting order parameter " + sortingParameterModel.SortingOrder);
             }
 
-            var res = Mapper.Map<List<GameInfoRestBasic>>(await GameInfoServiceInstance.GetListAsync(pagingParameterModel, sortingParameterModel));
-            var totalItemsCount = await GameInfoServiceInstance.GetAllCountAsync();
+            // ============================================== Check if the tags are valid ==============================================
+            if (searchParameters.TagsQuery != "")
+            {
+                var invalidTags = await GameInfoGenreTagServiceInstance.GetGenreTagService().FilterInvalidTags(searchParameters.TagsQuery.Split(',').ToList());
+
+                if (invalidTags.Count > 0)
+                {
+                    return Request.CreateErrorResponse(HttpStatusCode.NotFound, "The following tags from the search request are invalid: " + String.Join(", ", invalidTags.ToArray()));
+                }
+            }
+
+            // ============================================== Filter by search parameters (name and tags) ==============================================
+            var res = Mapper.Map<List<GameInfoRestBasic>>(await GameInfoServiceInstance.GetListAsync(pagingParameterModel, sortingParameterModel, searchParameters));
 
             foreach (var game in res)
             {
                 await FillGameTags(game);
             }
 
+            // ============================================== Generate metadata ==============================================
             var pagingMetadata = new
             {
-                TotalItemsCount = totalItemsCount,
+                TotalItemsCount = res.Count,
                 CurrentPage = pagingParameterModel.PageNumber,
                 PageSize = pagingParameterModel.PageSize,
-                TotalPages = (int)Math.Ceiling(totalItemsCount / (double)pagingParameterModel.PageSize)
+                TotalPages = (int)Math.Ceiling(res.Count / (double)pagingParameterModel.PageSize)
             };
 
             HttpContext.Current.Response.Headers.Add("Paging-Headers", JsonConvert.SerializeObject(pagingMetadata));
@@ -138,7 +151,12 @@ namespace MonoProject.WebAPI.Controllers
 
             if (newGameRest.Tags != null)
             {
-                await UpdateTagsAsync(res.ID, newGameRest.Tags);
+                var updateResponse = await UpdateTagsAsync(res.ID, newGameRest.Tags);
+
+                if (updateResponse.StatusCode != HttpStatusCode.OK)
+                {
+                    return updateResponse;
+                }
             }
 
             res.Tags = await GameInfoGenreTagServiceInstance.GetGameTagsAsync(res.ID);
@@ -184,7 +202,12 @@ namespace MonoProject.WebAPI.Controllers
 
                 if (gameToUpdateRest.Tags != null)
                 {
-                    await UpdateTagsAsync(original.ID, gameToUpdateRest.Tags);
+                    var updateResponse = await UpdateTagsAsync(original.ID, gameToUpdateRest.Tags);
+
+                    if (updateResponse.StatusCode != HttpStatusCode.OK)
+                    {
+                        return updateResponse;
+                    }
                 }
 
                 var res = Mapper.Map<GameInfoRestBasic>(await GameInfoServiceInstance.UpdateAsync(gameToUpdate));
@@ -215,7 +238,6 @@ namespace MonoProject.WebAPI.Controllers
         public async Task<HttpResponseMessage> UpdateTagsAsync(int gameID, [FromBody] List<string> tags)
         {
             var existingTags = await GameInfoGenreTagServiceInstance.GetGameTagsAsync(gameID);
-            List<int> newTags = new List<int>();
 
             if (tags == null)
             {
@@ -224,18 +246,11 @@ namespace MonoProject.WebAPI.Controllers
 
             // Make sure all requested tags actually exist as genre tags in the database
             // and fill the list of new tags to create relations for
-            foreach (string tagName in tags) 
-            {
-                var genreTag = await GameInfoGenreTagServiceInstance.GetGenreTagService().GetByNameAsync(tagName);
+            var invalidTags = await GameInfoGenreTagServiceInstance.GetGenreTagService().FilterInvalidTags(tags);
 
-                if (genreTag == null)
-                {
-                    return Request.CreateErrorResponse(HttpStatusCode.NotFound, "The following tag wasn't found in the database: " + tagName);
-                }
-                else if (!existingTags.Contains(tagName))
-                {
-                    newTags.Add(genreTag.ID);
-                }
+            if (invalidTags.Count > 0)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.NotFound, "The following tags from the update request are invalid: " + String.Join(", ", invalidTags.ToArray()));
             }
 
             // Remove the tag relations that exist but aren't in the new tag list
@@ -248,8 +263,9 @@ namespace MonoProject.WebAPI.Controllers
             }
 
             // Create the new, non-existing relations
-            foreach (int tagID in newTags)
+            foreach (string tagName in tags.Except(existingTags))
             {
+                int tagID = (await GameInfoGenreTagServiceInstance.GetGenreTagService().GetByNameAsync(tagName)).ID;
                 GameInfoGenreTag newTag = new GameInfoGenreTag();
 
                 newTag.GameInfoID = gameID;

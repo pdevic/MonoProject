@@ -27,9 +27,9 @@ namespace MonoProject.Service
             return await Repository.GetAllCountAsync();
         }
 
-        public async Task<IEnumerable<IClass>> GetListAsync(PagingParameterModel pagingParameterModel, SortingParameterModel sortingParameterModel)
+        public async Task<IEnumerable<IClass>> GetListAsync(PagingParameterModel pagingParameterModel, SortingParameterModel sortingParameterModel, SearchParameters searchParameters)
         {
-            return await Repository.GetListAsync(pagingParameterModel, sortingParameterModel);
+            return await Repository.GetListAsync(pagingParameterModel, sortingParameterModel, searchParameters);
         }
 
         public async Task<IClass> GetByIDAsync(int entityKey)

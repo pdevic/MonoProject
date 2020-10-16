@@ -11,5 +11,6 @@ namespace MonoProject.Service.Common
     public interface IGenreTagService : IRepositoryService<IGenreTag, int>
     {
         Task<IGenreTag> GetByNameAsync(string tagName);
+        Task<List<string>> FilterInvalidTags(List<string> tags);
     }
 }

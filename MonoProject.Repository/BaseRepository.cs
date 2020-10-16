@@ -32,7 +32,7 @@ namespace MonoProject.Repository
             return Mapper.Map<TClass>(await Context.Set<TEntity>().AsNoTracking().SingleOrDefaultAsync(x => x.ID == gameInfoPlayerCountTagID));
         }
 
-        public virtual async Task<IEnumerable<TInterface>> GetListAsync(PagingParameterModel pagingParameterModel, SortingParameterModel sortingParameterModel)
+        public virtual async Task<IEnumerable<TInterface>> GetListAsync(PagingParameterModel pagingParameterModel, SortingParameterModel sortingParameterModel, SearchParameters searchParameters)
         {
             var query = (await GetEntitySet().ToListAsync()).AsQueryable();
             return Mapper.Map<List<TClass>>(query.Skip((pagingParameterModel.PageNumber - 1) * pagingParameterModel.PageSize).Take(pagingParameterModel.PageSize).ToList());

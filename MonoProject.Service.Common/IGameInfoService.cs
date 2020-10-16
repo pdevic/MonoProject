@@ -11,5 +11,6 @@ namespace MonoProject.Service.Common
 {
     public interface IGameInfoService : IRepositoryService<IGameInfo, int>
     {
+        Task<IEnumerable<IGameInfo>> FilterByNameAsync(string nameQuery);
     }
 }

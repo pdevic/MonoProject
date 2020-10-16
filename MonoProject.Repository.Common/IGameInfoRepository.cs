@@ -9,5 +9,6 @@ namespace MonoProject.Repository.Common
 {
     public interface IGameInfoRepository : IBaseRepository<IGameInfo>
     {
+        Task<IEnumerable<IGameInfo>> FilterByNameAsync(string nameQuery);
     }
 }

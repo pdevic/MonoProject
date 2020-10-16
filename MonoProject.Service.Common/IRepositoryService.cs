@@ -13,7 +13,7 @@ namespace MonoProject.Service.Common
     {
         Task<TEntity> GetByIDAsync(TKey entityKey);
         Task<int> GetAllCountAsync();
-        Task<IEnumerable<TEntity>> GetListAsync(PagingParameterModel pagingParameterModel, SortingParameterModel sortingParameterModel);
+        Task<IEnumerable<TEntity>> GetListAsync(PagingParameterModel pagingParameterModel, SortingParameterModel sortingParameterModel, SearchParameters searchParameters);
         Task<TEntity> InsertAsync(TEntity entityToInsert);
         Task<TEntity> UpdateAsync(TEntity entityToUpdate);
         Task<bool> DeleteAsync(TKey entityKey);

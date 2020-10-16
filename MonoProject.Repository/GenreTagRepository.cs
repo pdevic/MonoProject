@@ -23,7 +23,7 @@ namespace MonoProject.Repository
 
         }
 
-        public override async Task<IEnumerable<IGenreTag>> GetListAsync(PagingParameterModel pagingParameterModel, SortingParameterModel sortingParameterModel)
+        public override async Task<IEnumerable<IGenreTag>> GetListAsync(PagingParameterModel pagingParameterModel, SortingParameterModel sortingParameterModel, SearchParameters searchParameters)
         {
             var query = (await GetEntitySet().ToListAsync()).AsQueryable();
 

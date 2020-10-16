@@ -18,5 +18,9 @@ namespace MonoProject.Service
 
         }
 
+        public async Task<IEnumerable<IGameInfo>> FilterByNameAsync(string nameQuery)
+        {
+            return await Repository.FilterByNameAsync(nameQuery);
+        }
     }
 }

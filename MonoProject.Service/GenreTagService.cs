@@ -24,5 +24,20 @@ namespace MonoProject.Service
             return await Repository.GetByNameAsync(tagName);
         }
 
+        public async Task<List<string>> FilterInvalidTags(List<string> tags)
+        {
+            List<string> invalidTags = new List<string>();
+
+            foreach(var tagName in tags)
+            {
+                if ((await Repository.GetByNameAsync(tagName)) == null)
+                {
+                    invalidTags.Add(tagName);
+                }
+            }
+
+            return invalidTags;
+        }
+
     }
 }

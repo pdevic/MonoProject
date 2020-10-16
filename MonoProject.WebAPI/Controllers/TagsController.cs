@@ -39,9 +39,9 @@ namespace MonoProject.WebAPI.Controllers
 
         [HttpGet]
         [Route("index")]
-        public async Task<HttpResponseMessage> IndexAsync([FromUri] PagingParameterModel pagingParameterModel, [FromUri] SortingParameterModel sortingParameterModel)
+        public async Task<HttpResponseMessage> IndexAsync([FromUri] PagingParameterModel pagingParameterModel, [FromUri] SortingParameterModel sortingParameterModel, [FromUri] SearchParameters searchParameters)
         {
-            Common.Common.FillEmptyParameters(pagingParameterModel, sortingParameterModel);
+            Common.Common.FillEmptyParameters(pagingParameterModel, sortingParameterModel, searchParameters);
 
             if (sortingParameterModel.OrderBy != "Name")
             {
@@ -53,7 +53,7 @@ namespace MonoProject.WebAPI.Controllers
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Unknown sorting order parameter " + sortingParameterModel.SortingOrder);
             }
 
-            var res = Mapper.Map<List<GenreTagRestBasic>>(await GenreTagServiceInstance.GetListAsync(pagingParameterModel, sortingParameterModel));
+            var res = Mapper.Map<List<GenreTagRestBasic>>(await GenreTagServiceInstance.GetListAsync(pagingParameterModel, sortingParameterModel, searchParameters));
             var totalItemsCount = await GenreTagServiceInstance.GetAllCountAsync();
 
             var pagingMetadata = new
