@@ -41,7 +41,7 @@ namespace MonoProject.WebAPI.Controllers
         [Route("index")]
         public async Task<HttpResponseMessage> IndexAsync([FromUri] PagingParameterModel pagingParameterModel, [FromUri] SortingParameterModel sortingParameterModel, [FromUri] SearchParameters searchParameters)
         {
-            Common.Common.FillEmptyParameters(pagingParameterModel, sortingParameterModel, searchParameters);
+            Common.Common.FillEmptyParameters(ref pagingParameterModel, ref sortingParameterModel, ref searchParameters);
 
             if (sortingParameterModel.OrderBy != "Name")
             {

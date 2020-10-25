@@ -159,6 +159,8 @@ C:\Users\Jupiter\Desktop\MonoProject\MonoProject.Service\obj\Debug\MonoProject.S
 C:\Users\Jupiter\Desktop\MonoProject\MonoProject.Service\obj\Debug\MonoProject.Service.csproj.CopyComplete
 C:\Users\Jupiter\Desktop\MonoProject\MonoProject.Service\obj\Debug\MonoProject.Service.dll
 C:\Users\Jupiter\Desktop\MonoProject\MonoProject.Service\obj\Debug\MonoProject.Service.pdb
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service\bin\Debug\x86\sqlite3.dll
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service\bin\Debug\x64\sqlite3.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service\bin\Debug\MonoProject.Service.dll.config
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service\bin\Debug\MonoProject.Service.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service\bin\Debug\MonoProject.Service.pdb
@@ -314,5 +316,3 @@ C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service\obj\Debug\M
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service\obj\Debug\MonoProject.Service.csproj.CopyComplete
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service\obj\Debug\MonoProject.Service.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service\obj\Debug\MonoProject.Service.pdb
-C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service\bin\Debug\x86\sqlite3.dll
-C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.Service\bin\Debug\x64\sqlite3.dll

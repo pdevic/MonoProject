@@ -10,7 +10,7 @@ namespace MonoProject.Common
     public class PagingParameterModel
     {
         public const int MaxPageSize = 20;
-        private int InternalPageSize { get; set; } = 5;
+        private int InternalPageSize { get; set; } = 10;
 
         public int PageSize
         {

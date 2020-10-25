@@ -369,9 +369,9 @@ C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.DAL\bin\Debug\Syste
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.DAL\bin\Debug\System.Web.WebPages.Deployment.xml
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.DAL\bin\Debug\System.Web.WebPages.Razor.xml
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.DAL\obj\Debug\MonoProject.DAL.csprojAssemblyReference.cache
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.DAL\obj\Debug\MonoProject.DAL.Migrations.init.resources
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.DAL\obj\Debug\MonoProject.DAL.csproj.GenerateResource.cache
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.DAL\obj\Debug\MonoProject.DAL.csproj.CoreCompileInputs.cache
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.DAL\obj\Debug\MonoProject.DAL.csproj.CopyComplete
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.DAL\obj\Debug\MonoProject.DAL.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.DAL\obj\Debug\MonoProject.DAL.pdb
-C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.DAL\obj\Debug\MonoProject.DAL.Migrations.init.resources
-C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.DAL\obj\Debug\MonoProject.DAL.csproj.GenerateResource.cache

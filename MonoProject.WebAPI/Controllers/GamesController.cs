@@ -24,11 +24,13 @@ using HttpPostAttribute = System.Web.Http.HttpPostAttribute;
 using MonoProject.Common;
 using MonoProject.Model.Common;
 using MonoProject.Service;
+
 using System.Web.Mvc;
 using System.Web.Configuration;
 using System.Linq;
 using Autofac.Core;
 using Microsoft.Ajax.Utilities;
+using System.Web.Http.Cors;
 
 namespace MonoProject.WebAPI.Controllers
 {
@@ -59,7 +61,7 @@ namespace MonoProject.WebAPI.Controllers
         [Route("index")]
         public async Task<HttpResponseMessage> IndexAsync([FromUri] PagingParameterModel pagingParameterModel, [FromUri] SortingParameterModel sortingParameterModel, [FromUri] SearchParameters searchParameters)
         {
-            Common.Common.FillEmptyParameters(pagingParameterModel, sortingParameterModel, searchParameters);
+            Common.Common.FillEmptyParameters(ref pagingParameterModel, ref sortingParameterModel, ref searchParameters);
 
             // ============================================== Check if the order and search parameters are valid ==============================================
             if (!SortingParameterModel.OrderByOptions.Contains(sortingParameterModel.OrderBy))
@@ -92,18 +94,20 @@ namespace MonoProject.WebAPI.Controllers
             }
 
             // ============================================== Generate metadata ==============================================
+            var totalCount = await GameInfoServiceInstance.GetAllCountAsync();
             var pagingMetadata = new
             {
-                TotalItemsCount = res.Count,
+                TotalItemsCount = totalCount,
                 CurrentPage = pagingParameterModel.PageNumber,
                 PageSize = pagingParameterModel.PageSize,
-                TotalPages = (int)Math.Ceiling(res.Count / (double)pagingParameterModel.PageSize)
+                TotalPages = (int)Math.Ceiling(totalCount / (double)pagingParameterModel.PageSize)
             };
 
-            HttpContext.Current.Response.Headers.Add("Paging-Headers", JsonConvert.SerializeObject(pagingMetadata));
+            //HttpContext.Current.Response.Headers.Add("Paging-Headers", JsonConvert.SerializeObject(pagingMetadata));
             HttpContext.Current.Response.Headers.Add("Sorting-Headers", JsonConvert.SerializeObject(sortingParameterModel));
 
-            return Request.CreateResponse(HttpStatusCode.OK, res);
+            var result = new { Paging = pagingMetadata, Data = res };
+            return Request.CreateResponse(HttpStatusCode.OK, result);
         }
 
         [HttpGet]

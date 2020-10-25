@@ -11,7 +11,7 @@ namespace MonoProject.Common
         public const int gameInfoMaxNameLength = 50;
         public const int genreTagMaxNameLength = 20;
 
-        public static void FillEmptyParameters(PagingParameterModel pagingParameterModel, SortingParameterModel sortingParameterModel, SearchParameters searchParameters)
+        public static void FillEmptyParameters(ref PagingParameterModel pagingParameterModel, ref SortingParameterModel sortingParameterModel, ref SearchParameters searchParameters)
         {
             if (pagingParameterModel == null)
             {

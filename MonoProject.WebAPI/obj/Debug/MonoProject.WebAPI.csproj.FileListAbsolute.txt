@@ -142,8 +142,6 @@ C:\Users\Jupiter\Desktop\MonoProject\MonoProject.WebAPI\obj\Debug\MonoProject.We
 C:\Users\Jupiter\Desktop\MonoProject\MonoProject.WebAPI\obj\Debug\MonoProject.WebAPI.csproj.CopyComplete
 C:\Users\Jupiter\Desktop\MonoProject\MonoProject.WebAPI\obj\Debug\MonoProject.WebAPI.dll
 C:\Users\Jupiter\Desktop\MonoProject\MonoProject.WebAPI\obj\Debug\MonoProject.WebAPI.pdb
-C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\obj\Debug\MonoProject.WebAPI.csprojAssemblyReference.cache
-C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\obj\Debug\MonoProject.WebAPI.csproj.CoreCompileInputs.cache
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\MonoProject.WebAPI.dll.config
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\MonoProject.WebAPI.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\MonoProject.WebAPI.pdb
@@ -299,6 +297,11 @@ C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\MonoProj
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\MonoProject.DAL.pdb
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\MonoProject.DAL.dll.config
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\ru-ru\JavaScriptEngineSwitcher.Core.resources.dll
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\obj\Debug\MonoProject.WebAPI.csprojAssemblyReference.cache
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\obj\Debug\MonoProject.WebAPI.csproj.CoreCompileInputs.cache
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\obj\Debug\MonoProject.WebAPI.csproj.CopyComplete
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\obj\Debug\MonoProject.WebAPI.dll
 C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\obj\Debug\MonoProject.WebAPI.pdb
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\System.Web.Cors.dll
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\System.Web.Http.Cors.dll
+C:\Users\Jupiter\Documents\Work\Mono\MonoProject\MonoProject.WebAPI\bin\System.Web.Http.Cors.xml
